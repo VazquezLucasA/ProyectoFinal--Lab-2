@@ -1,3 +1,4 @@
+using ProyectoFinal.PL;
 namespace ProyectoFinal
 {
     internal static class Program
@@ -12,6 +13,7 @@ namespace ProyectoFinal
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new frmPacoGarcia());
+            Application.Run(new frmSucursal());
         }
     }
 }

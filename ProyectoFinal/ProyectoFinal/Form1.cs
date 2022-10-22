@@ -69,6 +69,22 @@ namespace ProyectoFinal
                 txtStock.Text = (dgvStock.Rows[indice].Cells[3].Value).ToString();
                 txtPrecio.Text = (dgvStock.Rows[indice].Cells[2].Value).ToString();
             }
+            
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
