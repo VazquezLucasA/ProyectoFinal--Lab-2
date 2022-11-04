@@ -37,7 +37,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVender = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -47,6 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnPreEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -119,26 +120,13 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(296, 123);
+            this.btnEliminar.Location = new System.Drawing.Point(312, 123);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1 ",
-            "2",
-            "3",
-            "4"});
-            this.comboBox1.Location = new System.Drawing.Point(656, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -161,7 +149,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(667, 53);
+            this.txtDescripcion.Location = new System.Drawing.Point(646, 24);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 23);
             this.txtDescripcion.TabIndex = 7;
@@ -169,7 +157,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(667, 35);
+            this.label1.Location = new System.Drawing.Point(646, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 8;
@@ -178,7 +166,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(667, 85);
+            this.label2.Location = new System.Drawing.Point(646, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 10;
@@ -186,7 +174,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(667, 103);
+            this.txtStock.Location = new System.Drawing.Point(646, 74);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 23);
             this.txtStock.TabIndex = 9;
@@ -194,7 +182,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(667, 134);
+            this.label3.Location = new System.Drawing.Point(646, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 12;
@@ -202,7 +190,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(667, 152);
+            this.txtPrecio.Location = new System.Drawing.Point(646, 123);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
             this.txtPrecio.TabIndex = 11;
@@ -217,12 +205,34 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "ESG";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(646, 161);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(100, 38);
+            this.btnLimpiar.TabIndex = 14;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnPreEliminar
+            // 
+            this.btnPreEliminar.Location = new System.Drawing.Point(293, 123);
+            this.btnPreEliminar.Name = "btnPreEliminar";
+            this.btnPreEliminar.Size = new System.Drawing.Size(118, 23);
+            this.btnPreEliminar.TabIndex = 15;
+            this.btnPreEliminar.Text = "Habilitar Eliminar";
+            this.btnPreEliminar.UseVisualStyleBackColor = true;
+            this.btnPreEliminar.Click += new System.EventHandler(this.btnPreEliminar_Click);
+            // 
             // frmPacoGarcia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPreEliminar);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPrecio);
@@ -232,12 +242,12 @@
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvStock);
             this.Name = "frmPacoGarcia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paco Garcia";
             this.Load += new System.EventHandler(this.frmPacoGarcia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
@@ -253,7 +263,6 @@
         private Button btnAgregar;
         private Button btnModificar;
         private Button btnEliminar;
-        private ComboBox comboBox1;
         private PictureBox pictureBox1;
         private Button btnVender;
         private TextBox txtDescripcion;
@@ -267,5 +276,7 @@
         private DataGridViewTextBoxColumn Stock;
         private DataGridViewTextBoxColumn Precio;
         private Label label4;
+        private Button btnLimpiar;
+        private Button btnPreEliminar;
     }
 }

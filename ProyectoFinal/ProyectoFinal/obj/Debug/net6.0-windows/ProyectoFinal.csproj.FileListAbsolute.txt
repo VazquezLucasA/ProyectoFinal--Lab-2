@@ -37,3 +37,11 @@ E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyect
 E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\obj\Debug\net6.0-windows\ProyectoFinal.Form2.resources
 E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\obj\Debug\net6.0-windows\ProyectoFinal.PL.frmEmpleados.resources
 E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\obj\Debug\net6.0-windows\ProyectoFinal.PL.frmSucursal.resources
+E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\obj\Debug\net6.0-windows\ProyectoFinal.PL.Presentation.resources
+E:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\ProyectoFinal\obj\Debug\net6.0-windows\ProyectoFinal.csproj.CopyComplete
