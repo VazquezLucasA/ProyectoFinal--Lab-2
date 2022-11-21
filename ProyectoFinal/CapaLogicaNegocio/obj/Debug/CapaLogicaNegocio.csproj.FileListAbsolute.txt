@@ -1,0 +1,9 @@
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.dll
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.pdb
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.dll
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.pdb
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.csproj.AssemblyReference.cache
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.csproj.CoreCompileInputs.cache
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.csproj.CopyComplete
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.dll
+F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.pdb

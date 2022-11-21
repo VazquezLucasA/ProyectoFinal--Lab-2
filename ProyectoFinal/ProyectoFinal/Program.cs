@@ -1,5 +1,10 @@
+using ProyectoFinal.PL;
+using CapaPresentacion;
 namespace ProyectoFinal
+
+
 {
+    
     internal static class Program
     {
         /// <summary>
@@ -11,7 +16,9 @@ namespace ProyectoFinal
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmPacoGarcia());
+            frmPresentacion frmPres = new frmPresentacion();
+            Application.Run(frmPres);
+
         }
     }
 }
