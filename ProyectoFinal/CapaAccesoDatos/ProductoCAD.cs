@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace CapaAccesoDatos
 {
-    internal class ProductoCAD
+    public class ProductoCAD
     {
         //miembros atributos
         private ConexionDB objConexionCAD;
         private SqlDataReader leerTabla;
         private DataTable miTabla;
         private SqlCommand comando;
-
-        //metodos para el CRUD y constructor
 
         public ProductoCAD()
         {
@@ -28,13 +26,29 @@ namespace CapaAccesoDatos
         public DataTable consultarProductos()
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = "consultarProductos";
-            comando.CommandType = CommandType.StoredProcedure;
+            //comando.CommandText = "consultarProductos";
+            //comando.CommandType = CommandType.StoredProcedure;
+
+            comando.CommandText = "SELECT * FROM Producto";
+            comando.CommandType =CommandType.Text;
             comando.Parameters.Clear();
             leerTabla = comando.ExecuteReader();
             miTabla.Load(leerTabla);
             objConexionCAD.cerrarConexion();
             return miTabla;
+        }
+        public string consultarUnProducto(int idProducto)
+        {
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "consultarUnProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idProducto", idProducto);
+            leerTabla = comando.ExecuteReader();
+            miTabla.Load(leerTabla);
+            string resultado = miTabla.ToString();
+            objConexionCAD.cerrarConexion();
+            return resultado;
         }
         public void agregarProducto(int idProducto, string descripcion, int stock, float precio)
         {
@@ -63,7 +77,7 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
         }
 
-        public void eliminarGenero(int idProducto)
+        public void eliminarProducto(int idProducto)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "eliminarProducto";

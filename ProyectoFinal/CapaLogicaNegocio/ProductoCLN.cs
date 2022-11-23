@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,7 +10,7 @@ using CapaAccesoDatos;
 
 namespace CapaLogicaNegocio
 {
-    internal class ProductoCLN
+    public class ProductoCLN
     {
         //miembros atributos
         private DataTable miTabla;
@@ -21,23 +22,23 @@ namespace CapaLogicaNegocio
             miTabla = new DataTable();
             objProductoCAD = new ProductoCAD();
         }
-        public DataTable consultarGeneros()
+        public DataTable consultarProductos()
         {
-            miTabla = objProductoCAD.consultarGeneros();
+            miTabla = objProductoCAD.consultarProductos();
             return miTabla;
         }
-        public void insertarGenero(int idGenero, string nombre, string calificacion)
+        public void agregarProducto(int idProducto, string descripcion, int stock, float precio)
         {
-            idGenero++;
-            objProductoCAD.insertarGenero(idGenero, nombre, calificacion);
+            idProducto++;
+            objProductoCAD.agregarProducto(idProducto, descripcion, stock, precio);
         }
-        public void actualizarGenero(int idGenero, string nombre, string calificacion)
+        public void actualizarProducto(int idProducto, string descripcion, int stock, float precio)
         {
-            objProductoCAD.actualizarGenero(idGenero, nombre, calificacion);
+            objProductoCAD.actualizarProducto(idProducto, descripcion, stock, precio);
         }
-        public void eliminarGenero(int idGenero)
+        public void eliminarProducto(int idProducto)
         {
-            objProductoCAD.eliminarGenero(idGenero);
+            objProductoCAD.eliminarProducto(idProducto);
         }
         public int getIndiceUltFila(int cantFilas)
         {

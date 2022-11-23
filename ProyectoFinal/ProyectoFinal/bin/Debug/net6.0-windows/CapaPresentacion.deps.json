@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "CapaPresentacion/1.0.0": {
         "dependencies": {
-          "CapaAccesoDatos": "1.0.0",
           "CapaLogicaNegocio": "1.0.0",
           "System.Data.SqlClient": "4.8.4"
         },

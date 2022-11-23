@@ -18,7 +18,7 @@ namespace CapaAccesoDatos
         public ConexionDB()
         {
             caden = "Data Source=DESKTOP-SHOETUK\\SQLEXPRESS;Initial Catalog=ProyectoFinalDB;Integrated Security=True";
-            cadena = "Data Source=DESKTOP-30DTIQQ\\MSSQLEXPRESS;Initial Catalog = Cuspide SA; User ID = sa; Password = 654321";
+            //cadena = "Data Source=DESKTOP-30DTIQQ\\MSSQLEXPRESS;Initial Catalog = Cuspide SA; User ID = sa; Password = 654321";
             conectarDB = new SqlConnection();
             conectarDB.ConnectionString = caden;
         }
@@ -33,7 +33,7 @@ namespace CapaAccesoDatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("La conexión no se pudo abrir" + ex.Message);
+                MessageBox.Show("La conexión no se pudo abrir: " + ex.Message);
                 return conectarDB;
             }
         }

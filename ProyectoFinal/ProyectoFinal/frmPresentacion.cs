@@ -24,7 +24,7 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmPacoGarcia frmProductos = new frmPacoGarcia();
+            frmProductos frmProductos = new frmProductos();
             frmProductos.ShowDialog();
             
         }
