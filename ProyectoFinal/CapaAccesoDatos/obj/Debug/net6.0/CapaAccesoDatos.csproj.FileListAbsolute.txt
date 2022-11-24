@@ -1,0 +1,12 @@
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\bin\Debug\net6.0\CapaAccesoDatos.deps.json
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\bin\Debug\net6.0\CapaAccesoDatos.dll
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\bin\Debug\net6.0\CapaAccesoDatos.pdb
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\CapaAccesoDatos.csproj.AssemblyReference.cache
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\CapaAccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\CapaAccesoDatos.AssemblyInfoInputs.cache
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\CapaAccesoDatos.AssemblyInfo.cs
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\CapaAccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\CapaAccesoDatos.dll
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\refint\CapaAccesoDatos.dll
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\CapaAccesoDatos.pdb
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaAccesoDatos\obj\Debug\net6.0\ref\CapaAccesoDatos.dll

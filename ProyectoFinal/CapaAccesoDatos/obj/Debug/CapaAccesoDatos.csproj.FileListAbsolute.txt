@@ -1,6 +1,0 @@
-F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.dll
-F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.pdb
-F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csproj.AssemblyReference.cache
-F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csproj.CoreCompileInputs.cache
-F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.dll
-F:\Lucas\Estudios\UTN\1ero 2do cuatrimestre\Laboratorio de computacion 2\proyecto final\ProyectoFinal\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.pdb

@@ -1,0 +1,138 @@
+﻿namespace CapaPresentacion
+{
+    partial class frmMenu
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
+            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.btnSucursal = new System.Windows.Forms.Button();
+            this.cbxSucursal = new System.Windows.Forms.ComboBox();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.lblSeleccion = new System.Windows.Forms.Label();
+            this.lblBienvenido = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.Location = new System.Drawing.Point(300, 310);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Size = new System.Drawing.Size(111, 100);
+            this.btnEmpleados.TabIndex = 26;
+            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
+            // btnSucursal
+            // 
+            this.btnSucursal.Location = new System.Drawing.Point(109, 310);
+            this.btnSucursal.Name = "btnSucursal";
+            this.btnSucursal.Size = new System.Drawing.Size(111, 100);
+            this.btnSucursal.TabIndex = 25;
+            this.btnSucursal.Text = "Sucursal";
+            this.btnSucursal.UseVisualStyleBackColor = true;
+            this.btnSucursal.Click += new System.EventHandler(this.btnSucursal_Click);
+            // 
+            // cbxSucursal
+            // 
+            this.cbxSucursal.FormattingEnabled = true;
+            this.cbxSucursal.Location = new System.Drawing.Point(535, 240);
+            this.cbxSucursal.Name = "cbxSucursal";
+            this.cbxSucursal.Size = new System.Drawing.Size(156, 23);
+            this.cbxSucursal.TabIndex = 24;
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.Location = new System.Drawing.Point(557, 310);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(111, 100);
+            this.btnIngresar.TabIndex = 23;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // lblSeleccion
+            // 
+            this.lblSeleccion.AutoSize = true;
+            this.lblSeleccion.Location = new System.Drawing.Point(548, 222);
+            this.lblSeleccion.Name = "lblSeleccion";
+            this.lblSeleccion.Size = new System.Drawing.Size(134, 15);
+            this.lblSeleccion.TabIndex = 22;
+            this.lblSeleccion.Text = "SELECCIONE SUCURSAL";
+            // 
+            // lblBienvenido
+            // 
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Location = new System.Drawing.Point(371, 178);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(74, 15);
+            this.lblBienvenido.TabIndex = 21;
+            this.lblBienvenido.Text = "BIENVENIDO";
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(109, 41);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(572, 114);
+            this.picLogo.TabIndex = 20;
+            this.picLogo.TabStop = false;
+            // 
+            // frmMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEmpleados);
+            this.Controls.Add(this.btnSucursal);
+            this.Controls.Add(this.cbxSucursal);
+            this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.lblSeleccion);
+            this.Controls.Add(this.lblBienvenido);
+            this.Controls.Add(this.picLogo);
+            this.Name = "frmMenu";
+            this.Text = "frmMenu";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private Button btnEmpleados;
+        private Button btnSucursal;
+        private ComboBox cbxSucursal;
+        private Button btnIngresar;
+        private Label lblSeleccion;
+        private Label lblBienvenido;
+        private PictureBox picLogo;
+    }
+}

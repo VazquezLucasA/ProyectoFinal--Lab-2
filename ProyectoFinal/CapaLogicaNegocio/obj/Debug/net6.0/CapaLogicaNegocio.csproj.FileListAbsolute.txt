@@ -1,0 +1,15 @@
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\bin\Debug\net6.0\CapaLogicaNegocio.deps.json
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\bin\Debug\net6.0\CapaLogicaNegocio.dll
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\bin\Debug\net6.0\CapaLogicaNegocio.pdb
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\bin\Debug\net6.0\CapaAccesoDatos.dll
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\bin\Debug\net6.0\CapaAccesoDatos.pdb
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\CapaLogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\CapaLogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\CapaLogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\CapaLogicaNegocio.AssemblyInfo.cs
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\CapaLogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\CapaLogicaNegocio.csproj.CopyComplete
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\CapaLogicaNegocio.dll
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\refint\CapaLogicaNegocio.dll
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\CapaLogicaNegocio.pdb
+C:\Users\Lucas\Desktop\ProyectoFinal-Lab\ProyectoFinal--Lab\CapaLogicaNegocio\obj\Debug\net6.0\ref\CapaLogicaNegocio.dll
