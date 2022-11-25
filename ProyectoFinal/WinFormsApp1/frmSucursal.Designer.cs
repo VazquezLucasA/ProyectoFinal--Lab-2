@@ -37,6 +37,7 @@
             this.dgvSucursal = new System.Windows.Forms.DataGridView();
             this.txtSucursal = new System.Windows.Forms.TextBox();
             this.lblSucursal = new System.Windows.Forms.Label();
+            this.btnPreEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             this.btnCancelar.TabIndex = 31;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEliminar
             // 
@@ -73,6 +75,7 @@
             this.btnEliminar.TabIndex = 30;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -82,6 +85,7 @@
             this.btnModificar.TabIndex = 29;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -91,6 +95,7 @@
             this.btnAgregar.TabIndex = 28;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvSucursal
             // 
@@ -98,8 +103,10 @@
             this.dgvSucursal.Location = new System.Drawing.Point(37, 227);
             this.dgvSucursal.Name = "dgvSucursal";
             this.dgvSucursal.RowTemplate.Height = 25;
+            this.dgvSucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSucursal.Size = new System.Drawing.Size(386, 211);
             this.dgvSucursal.TabIndex = 27;
+            this.dgvSucursal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSucursal_CellClick);
             // 
             // txtSucursal
             // 
@@ -117,11 +124,21 @@
             this.lblSucursal.TabIndex = 25;
             this.lblSucursal.Text = "Nombre Sucursal";
             // 
+            // btnPreEliminar
+            // 
+            this.btnPreEliminar.Location = new System.Drawing.Point(233, 129);
+            this.btnPreEliminar.Name = "btnPreEliminar";
+            this.btnPreEliminar.Size = new System.Drawing.Size(92, 62);
+            this.btnPreEliminar.TabIndex = 34;
+            this.btnPreEliminar.Text = "Habilitar Eliminar";
+            this.btnPreEliminar.UseVisualStyleBackColor = true;
+            // 
             // frmSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 462);
+            this.Controls.Add(this.btnPreEliminar);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.btnCancelar);
@@ -133,6 +150,7 @@
             this.Controls.Add(this.lblSucursal);
             this.Name = "frmSucursal";
             this.Text = "frmSucursal";
+            this.Load += new System.EventHandler(this.frmSucursal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -150,5 +168,6 @@
         private DataGridView dgvSucursal;
         private TextBox txtSucursal;
         private Label lblSucursal;
+        private Button btnPreEliminar;
     }
 }

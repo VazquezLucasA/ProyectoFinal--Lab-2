@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//listo
 namespace CapaAccesoDatos
 {
     public class ProductoCAD
@@ -29,9 +29,10 @@ namespace CapaAccesoDatos
             //comando.CommandText = "consultarProductos";
             //comando.CommandType = CommandType.StoredProcedure;
 
-            comando.CommandText = "SELECT * FROM Producto";
-            comando.CommandType = CommandType.Text;
+            comando.CommandText = "select * FROM producto";
+            comando.CommandType= CommandType.Text;
 
+            //comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             leerTabla = comando.ExecuteReader();
             miTabla.Load(leerTabla);

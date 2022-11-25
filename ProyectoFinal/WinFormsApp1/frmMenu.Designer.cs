@@ -36,12 +36,13 @@
             this.lblSeleccion = new System.Windows.Forms.Label();
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnVentas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEmpleados
             // 
-            this.btnEmpleados.Location = new System.Drawing.Point(300, 310);
+            this.btnEmpleados.Location = new System.Drawing.Point(242, 310);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(111, 100);
             this.btnEmpleados.TabIndex = 26;
@@ -51,7 +52,7 @@
             // 
             // btnSucursal
             // 
-            this.btnSucursal.Location = new System.Drawing.Point(109, 310);
+            this.btnSucursal.Location = new System.Drawing.Point(71, 310);
             this.btnSucursal.Name = "btnSucursal";
             this.btnSucursal.Size = new System.Drawing.Size(111, 100);
             this.btnSucursal.TabIndex = 25;
@@ -61,6 +62,7 @@
             // 
             // cbxSucursal
             // 
+            this.cbxSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSucursal.FormattingEnabled = true;
             this.cbxSucursal.Location = new System.Drawing.Point(535, 240);
             this.cbxSucursal.Name = "cbxSucursal";
@@ -69,7 +71,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(557, 310);
+            this.btnIngresar.Location = new System.Drawing.Point(580, 310);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(111, 100);
             this.btnIngresar.TabIndex = 23;
@@ -104,11 +106,22 @@
             this.picLogo.TabIndex = 20;
             this.picLogo.TabStop = false;
             // 
+            // btnVentas
+            // 
+            this.btnVentas.Location = new System.Drawing.Point(417, 310);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(111, 100);
+            this.btnVentas.TabIndex = 27;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSucursal);
             this.Controls.Add(this.cbxSucursal);
@@ -134,5 +147,6 @@
         private Label lblSeleccion;
         private Label lblBienvenido;
         private PictureBox picLogo;
+        private Button btnVentas;
     }
 }

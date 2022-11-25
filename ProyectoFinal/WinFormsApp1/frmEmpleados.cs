@@ -16,5 +16,35 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExaminate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

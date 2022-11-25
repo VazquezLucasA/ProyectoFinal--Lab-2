@@ -34,40 +34,44 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
             return miTabla;
         }
-        public void agregarVenta(int idProducto, string descripcion, int stock, float precio)
+        public void agregarVenta(int idVenta, int cantidad , float total, DateTime fecha, int idProducto, int idEmpleado)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "agregarVenta";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idVenta", idVenta);
+            comando.Parameters.AddWithValue("@cantidad", cantidad);
+            comando.Parameters.AddWithValue("@total", total);
+            comando.Parameters.AddWithValue("@fecha", fecha);
             comando.Parameters.AddWithValue("@idProducto", idProducto);
-            comando.Parameters.AddWithValue("@descripcion", descripcion);
-            comando.Parameters.AddWithValue("@stock", stock);
-            comando.Parameters.AddWithValue("@precio", precio);
+            comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
-        public void actualizarVenta(int idProducto, string descripcion, int stock, float precio)
+        public void actualizarVenta(int idVenta, int cantidad, float total, DateTime fecha, int idProducto, int idEmpleado)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = "actualizarProducto";
+            comando.CommandText = "actualizarVenta";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idVenta", idVenta);
+            comando.Parameters.AddWithValue("@cantidad", cantidad);
+            comando.Parameters.AddWithValue("@total", total);
+            comando.Parameters.AddWithValue("@fecha", fecha);
             comando.Parameters.AddWithValue("@idProducto", idProducto);
-            comando.Parameters.AddWithValue("@descripcion", descripcion);
-            comando.Parameters.AddWithValue("@stock", stock);
-            comando.Parameters.AddWithValue("@precio", precio);
+            comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
 
-        public void eliminarVenta(int idProducto)
+        public void eliminarVenta(int idVenta)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = "eliminarProducto";
+            comando.CommandText = "eliminarVenta";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@idProducto", idProducto);
+            comando.Parameters.AddWithValue("@idVenta", idVenta);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }

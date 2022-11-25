@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows;
-
+//listo
 namespace CapaAccesoDatos
 {
     public class ConexionCAD
@@ -9,7 +9,7 @@ namespace CapaAccesoDatos
         //private string cadena;
         private string caden;
         private SqlConnection conectarDB;
-
+        
         public ConexionCAD()
         {
             caden = "Data Source=DESKTOP-SHOETUK\\SQLEXPRESS;Initial Catalog=ProyectoFinalDB;Integrated Security=True";

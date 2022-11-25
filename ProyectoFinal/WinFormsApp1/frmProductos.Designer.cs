@@ -206,6 +206,8 @@
             // 
             // dgvStock
             // 
+            this.dgvStock.AllowUserToAddRows = false;
+            this.dgvStock.AllowUserToDeleteRows = false;
             this.dgvStock.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Location = new System.Drawing.Point(37, 204);

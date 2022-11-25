@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//LISTO
+
 namespace CapaAccesoDatos
 {
     public class EmpleadosCAD
@@ -25,7 +27,7 @@ namespace CapaAccesoDatos
             comando = new SqlCommand();
         }
 
-        public DataTable constularEmpleados()
+        public DataTable consultarEmpleados()
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "consultarEmpleados";
@@ -37,40 +39,43 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
             return miTabla;
         }
-        public DataTable agregarEmpleado()
+        public void agregarEmpleado(int idEmpleado, string nombre, string apellido, string correo, int idSucursal)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "agregarEmpleado";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            leerTabla = comando.ExecuteReader();
-            miTabla.Load(leerTabla);
-
+            comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@apellido", apellido);
+            comando.Parameters.AddWithValue("@correo", correo);
+            comando.Parameters.AddWithValue("@idSucursal", idSucursal);
+            comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
-            return miTabla;
         }
-        public DataTable modificarEmpleado()
+        public void actualizarEmpleado(int idEmpleado, string nombre, string apellido, string correo, int idSucursal)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = "modificarEmpleado";
+            comando.CommandText = "actualizarEmpleado";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            leerTabla = comando.ExecuteReader();
-            miTabla.Load(leerTabla);
-
+            comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@apellido", apellido);
+            comando.Parameters.AddWithValue("@correo", correo);
+            comando.Parameters.AddWithValue("@idSucursal", idSucursal);
+            comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
-            return miTabla;
         }
-        public DataTable eliminarEmpleado()
+        public void eliminarEmpleado(int idEmpleado)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "eliminarEmpleado";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            leerTabla = comando.ExecuteReader();
-            miTabla.Load(leerTabla);
+            comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+            comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
-            return miTabla;
         }
     }
 }

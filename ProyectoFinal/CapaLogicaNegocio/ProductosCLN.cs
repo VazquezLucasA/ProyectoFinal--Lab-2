@@ -1,10 +1,10 @@
-﻿using CapaAccesoDatos;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using CapaAccesoDatos;
 
 namespace CapaLogicaNegocio
 {
@@ -13,7 +13,7 @@ namespace CapaLogicaNegocio
         //miembros atributos
         private DataTable miTabla;
         private ProductoCAD objProductoCAD;
-
+        
         //miembros metodos
         public ProductoCLN()
         {
@@ -42,10 +42,12 @@ namespace CapaLogicaNegocio
         {
             return cantFilas - 2;
         }
-        public int getCodigoProducto(object codigoProducto)
+        public int getCodigoProducto(object a)
         {
-            int a = Convert.ToInt32(codigoProducto) + 1;
-            return a;
+            int numero = Convert.ToInt32(a);
+            int codigo = numero + 1;
+            return codigo;
+
         }
         public int convertirINT()
         {

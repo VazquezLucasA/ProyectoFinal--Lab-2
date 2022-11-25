@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj": {}
+    "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
+    "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
         "projectName": "CapaAccesoDatos",
-        "projectPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
+        "projectPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
         "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\obj\\",
+        "outputPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj": {
+    "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj",
         "projectName": "CapaLogicaNegocio",
-        "projectPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj",
+        "projectPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj",
         "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaLogicaNegocio\\obj\\",
+        "outputPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaLogicaNegocio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
-                "projectPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\CapaAccesoDatos.csproj"
+              "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\CapaAccesoDatos.csproj": {
+                "projectPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\CapaAccesoDatos.csproj"
               }
             }
           }

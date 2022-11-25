@@ -476,11 +476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
+      "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
       "projectName": "CapaAccesoDatos",
-      "projectPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
+      "projectPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\CapaAccesoDatos.csproj",
       "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal-Lab\\ProyectoFinal--Lab\\CapaAccesoDatos\\obj\\",
+      "outputPath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaAccesoDatos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

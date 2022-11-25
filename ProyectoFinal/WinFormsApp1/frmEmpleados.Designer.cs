@@ -55,6 +55,7 @@
             this.btnCancel.TabIndex = 33;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEliminate
             // 
@@ -64,6 +65,7 @@
             this.btnEliminate.TabIndex = 32;
             this.btnEliminate.Text = "Eliminar";
             this.btnEliminate.UseVisualStyleBackColor = true;
+            this.btnEliminate.Click += new System.EventHandler(this.btnEliminate_Click);
             // 
             // btnModify
             // 
@@ -73,6 +75,7 @@
             this.btnModify.TabIndex = 31;
             this.btnModify.Text = "Modificar";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnAdd
             // 
@@ -82,6 +85,7 @@
             this.btnAdd.TabIndex = 30;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvEmpleados
             // 
@@ -89,8 +93,10 @@
             this.dgvEmpleados.Location = new System.Drawing.Point(131, 377);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowTemplate.Height = 25;
+            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.Size = new System.Drawing.Size(618, 202);
             this.dgvEmpleados.TabIndex = 29;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
             // btnExaminate
             // 
@@ -100,6 +106,7 @@
             this.btnExaminate.TabIndex = 28;
             this.btnExaminate.Text = "Examinar";
             this.btnExaminate.UseVisualStyleBackColor = true;
+            this.btnExaminate.Click += new System.EventHandler(this.btnExaminate_Click);
             // 
             // lblSucursal
             // 

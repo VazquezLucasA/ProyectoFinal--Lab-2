@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaLogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,16 +14,19 @@ namespace CapaPresentacion
 {
     public partial class frmMenu : Form
     {
-
         private frmSucursal frmSuc;
         private frmEmpleados frmEmp;
         private frmProductos frmProduct;
+        private frmVentas objFrmVentas;
+        private SucursalCLN objSucursalCLN;
         public frmMenu()
         {
             InitializeComponent();
             frmSuc = new frmSucursal();
             frmEmp = new frmEmpleados(); 
-            frmProduct = new frmProductos(); 
+            frmProduct = new frmProductos();
+            objFrmVentas = new frmVentas();
+            objSucursalCLN= new SucursalCLN();
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {
@@ -56,10 +60,19 @@ namespace CapaPresentacion
 
         private void llenarCmb()
         {
-            //comboBox1.DataSource = tabla.find();
-            //comboBox1.ValueMember = "idSucursal";
-            cbxSucursal.DisplayMember = "sucursal";
-            //cbxSucursal.SelectedIndex = 1;
+            DataTable miTabla = new DataTable();
+            miTabla = objSucursalCLN.consultarSucursales();
+            cbxSucursal.DataSource = miTabla;
+            cbxSucursal.ValueMember = "idSucursal";
+            cbxSucursal.DisplayMember = "nombre";
+            cbxSucursal.SelectedIndex = 1;
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            objFrmVentas.ShowDialog();
+            this.Close();
         }
     }
 }
