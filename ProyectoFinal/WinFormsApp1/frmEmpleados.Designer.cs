@@ -43,6 +43,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.picPhoto = new System.Windows.Forms.PictureBox();
             this.cbxSucursal = new System.Windows.Forms.ComboBox();
+            this.btnPreEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).BeginInit();
             this.SuspendLayout();
@@ -89,9 +90,12 @@
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
+            this.dgvEmpleados.AllowUserToDeleteRows = false;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Location = new System.Drawing.Point(131, 377);
             this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.RowTemplate.Height = 25;
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.Size = new System.Drawing.Size(618, 202);
@@ -175,17 +179,29 @@
             // 
             // cbxSucursal
             // 
+            this.cbxSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSucursal.FormattingEnabled = true;
             this.cbxSucursal.Location = new System.Drawing.Point(534, 173);
             this.cbxSucursal.Name = "cbxSucursal";
             this.cbxSucursal.Size = new System.Drawing.Size(181, 23);
             this.cbxSucursal.TabIndex = 19;
             // 
+            // btnPreEliminar
+            // 
+            this.btnPreEliminar.Location = new System.Drawing.Point(559, 297);
+            this.btnPreEliminar.Name = "btnPreEliminar";
+            this.btnPreEliminar.Size = new System.Drawing.Size(92, 62);
+            this.btnPreEliminar.TabIndex = 34;
+            this.btnPreEliminar.Text = "Habilitar Eliminar";
+            this.btnPreEliminar.UseVisualStyleBackColor = true;
+            this.btnPreEliminar.Click += new System.EventHandler(this.btnPreEliminar_Click);
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 676);
+            this.Controls.Add(this.btnPreEliminar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEliminate);
             this.Controls.Add(this.btnModify);
@@ -203,6 +219,7 @@
             this.Controls.Add(this.cbxSucursal);
             this.Name = "frmEmpleados";
             this.Text = "frmEmpleados";
+            this.Load += new System.EventHandler(this.frmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).EndInit();
             this.ResumeLayout(false);
@@ -227,5 +244,6 @@
         private Label lblName;
         private PictureBox picPhoto;
         private ComboBox cbxSucursal;
+        private Button btnPreEliminar;
     }
 }

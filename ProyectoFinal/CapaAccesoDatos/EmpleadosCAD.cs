@@ -77,5 +77,18 @@ namespace CapaAccesoDatos
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
+        public DataTable consultarEmpleadosUnaSucursal(int idSucursal)
+        {
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "consultarEmpleadosUnaSucursal";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idSucursal", idSucursal);
+            leerTabla = comando.ExecuteReader();
+            miTabla.Load(leerTabla);
+
+            objConexionCAD.cerrarConexion();
+            return miTabla;
+        }
     }
 }

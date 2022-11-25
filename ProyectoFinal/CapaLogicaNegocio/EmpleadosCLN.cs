@@ -21,6 +21,7 @@ namespace CapaLogicaNegocio
 
         public DataTable consultarEmpleados()
         {
+            miTabla.Clear();
             miTabla = objEmpleadosCAD.consultarEmpleados();
             return miTabla;
         }
@@ -50,6 +51,13 @@ namespace CapaLogicaNegocio
             int numero = Convert.ToInt32(a);
             int codigo = numero + 1;
             return codigo;
+        }
+        public DataTable consultarEmpleadosUnaSucursal(int idSucursal)
+        {
+            miTabla.Clear();
+            miTabla = objEmpleadosCAD.consultarEmpleadosUnaSucursal(idSucursal);
+            return miTabla;
+
         }
     }
 

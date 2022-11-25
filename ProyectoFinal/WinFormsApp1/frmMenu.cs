@@ -19,6 +19,7 @@ namespace CapaPresentacion
         private frmProductos frmProduct;
         private frmVentas objFrmVentas;
         private SucursalCLN objSucursalCLN;
+        private EmpleadosCLN objEmpleadosCLN;
         public frmMenu()
         {
             InitializeComponent();
@@ -27,10 +28,12 @@ namespace CapaPresentacion
             frmProduct = new frmProductos();
             objFrmVentas = new frmVentas();
             objSucursalCLN= new SucursalCLN();
+            objEmpleadosCLN = new EmpleadosCLN();
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            llenarCmb();
+            llenarCbxSucursal();
+            llenarCbxEmpleado();
         }
 
         //BOTON INGRESAR SUCURSAL
@@ -48,7 +51,7 @@ namespace CapaPresentacion
             frmEmp.ShowDialog();
             this.Close();
         }
-
+        
         //BOTON INGRESAR PRODUCTOS
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -58,7 +61,7 @@ namespace CapaPresentacion
         }
         //BOTON REPORTE DE VENTAS
 
-        private void llenarCmb()
+        private void llenarCbxSucursal()
         {
             DataTable miTabla = new DataTable();
             miTabla = objSucursalCLN.consultarSucursales();
@@ -67,12 +70,27 @@ namespace CapaPresentacion
             cbxSucursal.DisplayMember = "nombre";
             cbxSucursal.SelectedIndex = 1;
         }
+        private void llenarCbxEmpleado()
+        {
+            DataTable miTabla = new DataTable();
+            //miTabla = objEmpleadosCLN.consultarEmpleados();
+            miTabla = objEmpleadosCLN.consultarEmpleadosUnaSucursal(cbxSucursal.SelectedIndex);
 
-        private void btnVentas_Click(object sender, EventArgs e)
+            cbxEmpleados.DataSource = miTabla;
+            cbxEmpleados.ValueMember = "idEmpleado";
+            cbxEmpleados.DisplayMember = "nombre";
+        }
+
+            private void btnVentas_Click(object sender, EventArgs e)
         {
             this.Hide();
             objFrmVentas.ShowDialog();
             this.Close();
+        }
+
+        private void cbxSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            llenarCbxEmpleado();
         }
     }
 }

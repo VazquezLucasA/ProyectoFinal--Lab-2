@@ -1,4 +1,5 @@
 using CapaLogicaNegocio;
+using CapaPresentacion;
 using System.Data;
 
 namespace WinFormsApp1
@@ -79,6 +80,7 @@ namespace WinFormsApp1
         //CARGAR DATA GRID
         private void cargarDgv()
         {
+            miTabla.Clear();
             miTabla = objProductoCLN.consultarProductos();
             dgvStock.DataSource = miTabla;
         }
@@ -91,7 +93,7 @@ namespace WinFormsApp1
             DialogResult opcion = MessageBox.Show("¿Está seguro que quiere agregar un nuevo producto?", "Nuevo producto", MessageBoxButtons.YesNo);
             if (opcion == DialogResult.Yes)
             {
-                indice = dgvStock.Rows.Add();
+                //indice = dgvStock.Rows.Add();
                 stock = Convert.ToInt32(txtStock.Text);
                 precio = Convert.ToInt32(txtPrecio.Text);
 
@@ -236,5 +238,6 @@ namespace WinFormsApp1
             }
             indiceCarrito++;
         }
+        
     }
 }

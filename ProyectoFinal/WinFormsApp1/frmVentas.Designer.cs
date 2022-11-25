@@ -44,13 +44,14 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.lblBienvenida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarCarrito
             // 
-            this.btnAgregarCarrito.Location = new System.Drawing.Point(619, 200);
+            this.btnAgregarCarrito.Location = new System.Drawing.Point(608, 243);
             this.btnAgregarCarrito.Name = "btnAgregarCarrito";
             this.btnAgregarCarrito.Size = new System.Drawing.Size(138, 48);
             this.btnAgregarCarrito.TabIndex = 52;
@@ -59,7 +60,7 @@
             // 
             // btnPreEliminar
             // 
-            this.btnPreEliminar.Location = new System.Drawing.Point(404, 129);
+            this.btnPreEliminar.Location = new System.Drawing.Point(393, 172);
             this.btnPreEliminar.Name = "btnPreEliminar";
             this.btnPreEliminar.Size = new System.Drawing.Size(118, 23);
             this.btnPreEliminar.TabIndex = 51;
@@ -68,7 +69,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(657, 143);
+            this.btnLimpiar.Location = new System.Drawing.Point(646, 186);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(100, 38);
             this.btnLimpiar.TabIndex = 50;
@@ -78,7 +79,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(657, 96);
+            this.lblPrecio.Location = new System.Drawing.Point(646, 139);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 15);
             this.lblPrecio.TabIndex = 49;
@@ -86,7 +87,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(657, 114);
+            this.txtPrecio.Location = new System.Drawing.Point(646, 157);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
             this.txtPrecio.TabIndex = 48;
@@ -94,7 +95,7 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(657, 52);
+            this.lblStock.Location = new System.Drawing.Point(646, 95);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(36, 15);
             this.lblStock.TabIndex = 47;
@@ -102,7 +103,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(657, 70);
+            this.txtStock.Location = new System.Drawing.Point(646, 113);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 23);
             this.txtStock.TabIndex = 46;
@@ -110,7 +111,7 @@
             // txtDescrip
             // 
             this.txtDescrip.AutoSize = true;
-            this.txtDescrip.Location = new System.Drawing.Point(657, 8);
+            this.txtDescrip.Location = new System.Drawing.Point(646, 51);
             this.txtDescrip.Name = "txtDescrip";
             this.txtDescrip.Size = new System.Drawing.Size(69, 15);
             this.txtDescrip.TabIndex = 45;
@@ -118,14 +119,14 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(657, 26);
+            this.txtDescripcion.Location = new System.Drawing.Point(646, 69);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 23);
             this.txtDescripcion.TabIndex = 44;
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(619, 396);
+            this.btnVender.Location = new System.Drawing.Point(608, 439);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(169, 48);
             this.btnVender.TabIndex = 43;
@@ -135,7 +136,7 @@
             // picLogo
             // 
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(12, 8);
+            this.picLogo.Location = new System.Drawing.Point(1, 51);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(572, 114);
             this.picLogo.TabIndex = 42;
@@ -143,7 +144,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(323, 129);
+            this.btnEliminar.Location = new System.Drawing.Point(312, 172);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 41;
@@ -152,7 +153,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(185, 129);
+            this.btnModificar.Location = new System.Drawing.Point(174, 172);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 40;
@@ -161,7 +162,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(23, 129);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 172);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(116, 23);
             this.btnAgregar.TabIndex = 39;
@@ -170,9 +171,11 @@
             // 
             // dgvVentas
             // 
+            this.dgvVentas.AllowUserToAddRows = false;
+            this.dgvVentas.AllowUserToDeleteRows = false;
             this.dgvVentas.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(23, 158);
+            this.dgvVentas.Location = new System.Drawing.Point(12, 201);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowTemplate.Height = 25;
@@ -180,11 +183,22 @@
             this.dgvVentas.Size = new System.Drawing.Size(567, 286);
             this.dgvVentas.TabIndex = 38;
             // 
+            // lblBienvenida
+            // 
+            this.lblBienvenida.AutoSize = true;
+            this.lblBienvenida.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblBienvenida.Location = new System.Drawing.Point(174, 11);
+            this.lblBienvenida.Name = "lblBienvenida";
+            this.lblBienvenida.Size = new System.Drawing.Size(114, 28);
+            this.lblBienvenida.TabIndex = 53;
+            this.lblBienvenida.Text = "Bienvenido ";
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(801, 511);
+            this.Controls.Add(this.lblBienvenida);
             this.Controls.Add(this.btnAgregarCarrito);
             this.Controls.Add(this.btnPreEliminar);
             this.Controls.Add(this.btnLimpiar);
@@ -226,5 +240,6 @@
         private Button btnModificar;
         private Button btnAgregar;
         private DataGridView dgvVentas;
+        private Label lblBienvenida;
     }
 }

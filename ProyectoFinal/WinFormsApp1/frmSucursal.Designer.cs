@@ -99,9 +99,12 @@
             // 
             // dgvSucursal
             // 
+            this.dgvSucursal.AllowUserToAddRows = false;
+            this.dgvSucursal.AllowUserToDeleteRows = false;
             this.dgvSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSucursal.Location = new System.Drawing.Point(37, 227);
             this.dgvSucursal.Name = "dgvSucursal";
+            this.dgvSucursal.ReadOnly = true;
             this.dgvSucursal.RowTemplate.Height = 25;
             this.dgvSucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSucursal.Size = new System.Drawing.Size(386, 211);
@@ -132,6 +135,7 @@
             this.btnPreEliminar.TabIndex = 34;
             this.btnPreEliminar.Text = "Habilitar Eliminar";
             this.btnPreEliminar.UseVisualStyleBackColor = true;
+            this.btnPreEliminar.Click += new System.EventHandler(this.btnPreEliminar_Click);
             // 
             // frmSucursal
             // 

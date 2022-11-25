@@ -47,6 +47,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.lblBienvenida = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.SuspendLayout();
@@ -220,11 +221,22 @@
             this.dgvStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStock_CellClick_1);
             this.dgvStock.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStock_CellContentDoubleClick);
             // 
+            // lblBienvenida
+            // 
+            this.lblBienvenida.AutoSize = true;
+            this.lblBienvenida.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblBienvenida.Location = new System.Drawing.Point(160, 9);
+            this.lblBienvenida.Name = "lblBienvenida";
+            this.lblBienvenida.Size = new System.Drawing.Size(114, 28);
+            this.lblBienvenida.TabIndex = 54;
+            this.lblBienvenida.Text = "Bienvenido ";
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 543);
+            this.Controls.Add(this.lblBienvenida);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblCantFilas);
             this.Controls.Add(this.lblLista);
@@ -274,5 +286,6 @@
         private Button btnModificar;
         private Button btnAgregar;
         private DataGridView dgvStock;
+        private Label lblBienvenida;
     }
 }

@@ -37,6 +37,8 @@
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnVentas = new System.Windows.Forms.Button();
+            this.cbxEmpleados = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,10 +66,11 @@
             // 
             this.cbxSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSucursal.FormattingEnabled = true;
-            this.cbxSucursal.Location = new System.Drawing.Point(535, 240);
+            this.cbxSucursal.Location = new System.Drawing.Point(580, 197);
             this.cbxSucursal.Name = "cbxSucursal";
             this.cbxSucursal.Size = new System.Drawing.Size(156, 23);
             this.cbxSucursal.TabIndex = 24;
+            this.cbxSucursal.SelectedIndexChanged += new System.EventHandler(this.cbxSucursal_SelectedIndexChanged);
             // 
             // btnIngresar
             // 
@@ -82,7 +85,7 @@
             // lblSeleccion
             // 
             this.lblSeleccion.AutoSize = true;
-            this.lblSeleccion.Location = new System.Drawing.Point(548, 222);
+            this.lblSeleccion.Location = new System.Drawing.Point(593, 179);
             this.lblSeleccion.Name = "lblSeleccion";
             this.lblSeleccion.Size = new System.Drawing.Size(134, 15);
             this.lblSeleccion.TabIndex = 22;
@@ -116,11 +119,31 @@
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
+            // cbxEmpleados
+            // 
+            this.cbxEmpleados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEmpleados.FormattingEnabled = true;
+            this.cbxEmpleados.Location = new System.Drawing.Point(580, 261);
+            this.cbxEmpleados.Name = "cbxEmpleados";
+            this.cbxEmpleados.Size = new System.Drawing.Size(156, 23);
+            this.cbxEmpleados.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(593, 243);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 15);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "SELECCIONE EMPLEADO";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbxEmpleados);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnSucursal);
@@ -148,5 +171,7 @@
         private Label lblBienvenido;
         private PictureBox picLogo;
         private Button btnVentas;
+        private ComboBox cbxEmpleados;
+        private Label label1;
     }
 }

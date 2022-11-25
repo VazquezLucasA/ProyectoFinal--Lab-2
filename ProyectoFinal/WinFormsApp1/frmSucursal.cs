@@ -73,10 +73,9 @@ namespace CapaPresentacion
             int indiceUltFila = objSucursalCLN.getIndiceUltFila(dgvSucursal.Rows.Count);
             int codigoSucursal = objSucursalCLN.getCodigoSucursal(dgvSucursal.Rows[indiceUltFila].Cells[0].Value);
 
-            DialogResult opcion = MessageBox.Show("¿Está seguro que quiere agregar un nuevo producto?", "Nuevo producto", MessageBoxButtons.YesNo);
+            DialogResult opcion = MessageBox.Show("¿Está seguro que quiere agregar una nueva sucursal?", "Nueva sucursal", MessageBoxButtons.YesNo);
             if (opcion == DialogResult.Yes)
             {
-                indice = dgvSucursal.Rows.Add();
                 sucursal = txtSucursal.Text;
                 direccion = txtDireccion.Text;
 
@@ -93,7 +92,7 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("Carga de producto cancelada");
+                MessageBox.Show("Carga de sucursal cancelada");
                 LimpiarTextBoxs();
             }
             cargarDgv();
@@ -149,6 +148,7 @@ namespace CapaPresentacion
         //SE CARGA EL DGV
         private void cargarDgv()
         {
+            miTabla.Clear();
             miTabla = objSucursalCLN.consultarSucursales();
             dgvSucursal.DataSource = miTabla;
         }
@@ -159,6 +159,14 @@ namespace CapaPresentacion
             txtSucursal.Clear();
             txtDireccion.Clear();
             
+        }
+
+        private void btnPreEliminar_Click(object sender, EventArgs e)
+        {
+            btnEliminar.Visible = true;
+            btnEliminar.Enabled = true;
+            btnPreEliminar.Visible = false;
+            btnModificar.Enabled = false;
         }
     }
 }
