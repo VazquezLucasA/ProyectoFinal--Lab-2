@@ -43,15 +43,15 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(262, 63);
+            this.txtDireccion.Location = new System.Drawing.Point(202, 63);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 23);
-            this.txtDireccion.TabIndex = 33;
+            this.txtDireccion.TabIndex = 1;
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(264, 26);
+            this.lblDireccion.Location = new System.Drawing.Point(204, 26);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(57, 15);
             this.lblDireccion.TabIndex = 32;
@@ -59,17 +59,17 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(331, 129);
+            this.btnCancelar.Location = new System.Drawing.Point(322, 129);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 62);
-            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(233, 129);
+            this.btnEliminar.Location = new System.Drawing.Point(224, 129);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(92, 62);
             this.btnEliminar.TabIndex = 30;
@@ -79,20 +79,20 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(135, 129);
+            this.btnModificar.Location = new System.Drawing.Point(126, 129);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(92, 62);
-            this.btnModificar.TabIndex = 29;
+            this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(37, 129);
+            this.btnAgregar.Location = new System.Drawing.Point(28, 129);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(92, 62);
-            this.btnAgregar.TabIndex = 28;
+            this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -102,26 +102,26 @@
             this.dgvSucursal.AllowUserToAddRows = false;
             this.dgvSucursal.AllowUserToDeleteRows = false;
             this.dgvSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSucursal.Location = new System.Drawing.Point(37, 227);
+            this.dgvSucursal.Location = new System.Drawing.Point(12, 220);
             this.dgvSucursal.Name = "dgvSucursal";
             this.dgvSucursal.ReadOnly = true;
             this.dgvSucursal.RowTemplate.Height = 25;
             this.dgvSucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSucursal.Size = new System.Drawing.Size(386, 211);
+            this.dgvSucursal.Size = new System.Drawing.Size(414, 211);
             this.dgvSucursal.TabIndex = 27;
             this.dgvSucursal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSucursal_CellClick);
             // 
             // txtSucursal
             // 
-            this.txtSucursal.Location = new System.Drawing.Point(53, 63);
+            this.txtSucursal.Location = new System.Drawing.Point(44, 63);
             this.txtSucursal.Name = "txtSucursal";
             this.txtSucursal.Size = new System.Drawing.Size(100, 23);
-            this.txtSucursal.TabIndex = 26;
+            this.txtSucursal.TabIndex = 0;
             // 
             // lblSucursal
             // 
             this.lblSucursal.AutoSize = true;
-            this.lblSucursal.Location = new System.Drawing.Point(55, 26);
+            this.lblSucursal.Location = new System.Drawing.Point(46, 26);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(98, 15);
             this.lblSucursal.TabIndex = 25;
@@ -129,10 +129,10 @@
             // 
             // btnPreEliminar
             // 
-            this.btnPreEliminar.Location = new System.Drawing.Point(233, 129);
+            this.btnPreEliminar.Location = new System.Drawing.Point(224, 129);
             this.btnPreEliminar.Name = "btnPreEliminar";
             this.btnPreEliminar.Size = new System.Drawing.Size(92, 62);
-            this.btnPreEliminar.TabIndex = 34;
+            this.btnPreEliminar.TabIndex = 4;
             this.btnPreEliminar.Text = "Habilitar Eliminar";
             this.btnPreEliminar.UseVisualStyleBackColor = true;
             this.btnPreEliminar.Click += new System.EventHandler(this.btnPreEliminar_Click);
@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 462);
+            this.ClientSize = new System.Drawing.Size(440, 443);
             this.Controls.Add(this.btnPreEliminar);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
@@ -153,6 +153,7 @@
             this.Controls.Add(this.txtSucursal);
             this.Controls.Add(this.lblSucursal);
             this.Name = "frmSucursal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSucursal";
             this.Load += new System.EventHandler(this.frmSucursal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).EndInit();

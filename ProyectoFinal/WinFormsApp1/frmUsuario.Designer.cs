@@ -28,12 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.cboUsuarios = new System.Windows.Forms.ComboBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.dgvClave = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClave)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // cboUsuarios
+            // 
+            this.cboUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUsuarios.FormattingEnabled = true;
+            this.cboUsuarios.Location = new System.Drawing.Point(198, 132);
+            this.cboUsuarios.Name = "cboUsuarios";
+            this.cboUsuarios.Size = new System.Drawing.Size(121, 23);
+            this.cboUsuarios.TabIndex = 0;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.Location = new System.Drawing.Point(198, 174);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(100, 23);
+            this.txtContraseña.TabIndex = 1;
+            this.txtContraseña.Text = "CONTRASEÑA";
+            this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
+            this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(198, 114);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(56, 15);
+            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.Text = "USUARIO";
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.Location = new System.Drawing.Point(388, 170);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresar.TabIndex = 2;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // dgvClave
+            // 
+            this.dgvClave.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClave.Location = new System.Drawing.Point(482, 5);
+            this.dgvClave.Name = "dgvClave";
+            this.dgvClave.RowTemplate.Height = 25;
+            this.dgvClave.Size = new System.Drawing.Size(306, 160);
+            this.dgvClave.TabIndex = 3;
+            // 
+            // frmUsuario
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvClave);
+            this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.cboUsuarios);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "frmUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClave)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private ComboBox cboUsuarios;
+        private TextBox txtContraseña;
+        private Label lblUsuario;
+        private Button btnIngresar;
+        private DataGridView dgvClave;
     }
 }

@@ -23,9 +23,12 @@ namespace WinFormsApp1
         private int stock;
         private float precio;
         private int indiceCarrito;
-
+        private string nombreBienvenida;
+        private int asd;
+        private string nombreProducto;
+        private int[] idProductos;
         //CONSTRUCTOR
-        public frmProductos()
+        public frmProductos(string nombreBienvenido)
         {
             InitializeComponent();
             indice = 0;
@@ -34,6 +37,10 @@ namespace WinFormsApp1
             precio = 0;
             stock = 0;
             indiceCarrito = 0;
+            nombreBienvenida = nombreBienvenido;
+            nombreProducto = "";
+            asd= 0;
+            idProductos = new int[5];
         }
         //MIEMBROS METODOS
 
@@ -45,14 +52,14 @@ namespace WinFormsApp1
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             btnPreEliminar.Enabled = false;
+            lblBienvenida.Text += nombreBienvenida;
         }
-
-        
 
         //CLICK EN LAS CELDAS
         private void dgvStock_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;
+            nombreProducto = dgvStock.Rows[indice].Cells[1].Value.ToString();
             lblCantFilas.Text = indice.ToString();
             if (indice == -1)
             { MessageBox.Show("Seleccione un fila válida"); }
@@ -75,7 +82,6 @@ namespace WinFormsApp1
                 }
             }
         }
-
 
         //CARGAR DATA GRID
         private void cargarDgv()
@@ -216,21 +222,16 @@ namespace WinFormsApp1
             string[] listado = new string[5];
             int[] idProductos = new int[5];
 
-            
-            if(indiceCarrito <= 5)
-            {
-                lblLista.Text = "";
-                listado[indiceCarrito] = dgvStock.Rows[indice].Cells[1].Value.ToString();
-                idProductos[indiceCarrito] = Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value);
-                for(int i = 0; i<5; i++)
-                {
-                    if(listado[i] != "")
-                    {
-                        lblLista.Text += listado[i] + "\n";
-                    }
-                }
+        }
 
-                
+        private void btnAgregarCarrito_Click(object sender, EventArgs e)
+        {
+            lblLista.Text +=  nombreProducto + " \n";
+
+
+            if (indiceCarrito < 5)
+            {
+                idProductos[indiceCarrito] = Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value);
             }
             else
             {
@@ -238,6 +239,5 @@ namespace WinFormsApp1
             }
             indiceCarrito++;
         }
-        
     }
 }

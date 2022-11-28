@@ -218,6 +218,7 @@
             this.Controls.Add(this.picPhoto);
             this.Controls.Add(this.cbxSucursal);
             this.Name = "frmEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmpleados";
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();

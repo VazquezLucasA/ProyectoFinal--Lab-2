@@ -25,7 +25,7 @@ namespace CapaPresentacion
             InitializeComponent();
             frmSuc = new frmSucursal();
             frmEmp = new frmEmpleados(); 
-            frmProduct = new frmProductos();
+            
             objFrmVentas = new frmVentas();
             objSucursalCLN= new SucursalCLN();
             objEmpleadosCLN = new EmpleadosCLN();
@@ -56,6 +56,7 @@ namespace CapaPresentacion
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            frmProduct = new frmProductos(cbxEmpleados.Text);
             frmProduct.ShowDialog();
             this.Close();
         }
@@ -65,20 +66,19 @@ namespace CapaPresentacion
         {
             DataTable miTabla = new DataTable();
             miTabla = objSucursalCLN.consultarSucursales();
-            cbxSucursal.DataSource = miTabla;
-            cbxSucursal.ValueMember = "idSucursal";
             cbxSucursal.DisplayMember = "nombre";
-            cbxSucursal.SelectedIndex = 1;
+            cbxSucursal.ValueMember = "idSucursal";
+            cbxSucursal.DataSource = miTabla;
+            cbxSucursal.SelectedIndex = 0;
         }
         private void llenarCbxEmpleado()
         {
             DataTable miTabla = new DataTable();
-            //miTabla = objEmpleadosCLN.consultarEmpleados();
-            miTabla = objEmpleadosCLN.consultarEmpleadosUnaSucursal(cbxSucursal.SelectedIndex);
-
+            int valor = Convert.ToInt32(cbxSucursal.SelectedValue);
+            miTabla = objEmpleadosCLN.consultarEmpleadosUnaSucursal(valor);
             cbxEmpleados.DataSource = miTabla;
             cbxEmpleados.ValueMember = "idEmpleado";
-            cbxEmpleados.DisplayMember = "nombre";
+            cbxEmpleados.DisplayMember = "apellido";
         }
 
             private void btnVentas_Click(object sender, EventArgs e)

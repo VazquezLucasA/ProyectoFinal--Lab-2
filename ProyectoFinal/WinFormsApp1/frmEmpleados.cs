@@ -14,6 +14,7 @@ namespace CapaPresentacion
     public partial class frmEmpleados : Form
     {
         private EmpleadosCLN objEmpleadosCLN;
+        private SucursalCLN objSucursalCLN;
         private DataTable miTabla;
         private int indice;
         public frmEmpleados()
@@ -22,8 +23,9 @@ namespace CapaPresentacion
             objEmpleadosCLN = new EmpleadosCLN();
             miTabla = new DataTable();
             indice = 0;
+            objSucursalCLN = new SucursalCLN();
     }
-
+        //BOTON CANCELAR
         private void btnCancel_Click(object sender, EventArgs e)
         {
             LimpiarTextBoxs();
@@ -38,15 +40,37 @@ namespace CapaPresentacion
 
 
         }
-
+        //BOTON AGREGAR
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int indiceUltFila = objEmpleadosCLN.getIndiceUltFila(dgvEmpleados.Rows.Count);
+            int idEmpleado = objEmpleadosCLN.getCodigoEmpleado(dgvEmpleados.Rows[indiceUltFila].Cells[0].Value);
 
+            DialogResult opcion = MessageBox.Show("¿Está seguro que quiere agregar un nuevo empleado?", "Nuevo empleado", MessageBoxButtons.YesNo);
+            if (opcion == DialogResult.Yes)
+            {
+                try
+                {
+                    objEmpleadosCLN.agregarEmpleado(idEmpleado, txtName.Text, txtSurname.Text, txtEmail.Text, Convert.ToInt32(cbxSucursal.SelectedValue));
+                    LimpiarTextBoxs();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hubo un error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    LimpiarTextBoxs();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Carga de empleado cancelada");
+                LimpiarTextBoxs();
+            }
+            cargarDgv();
         }
-
+        //BOTON MODIFICAR
         private void btnModify_Click(object sender, EventArgs e)
         {
-            objEmpleadosCLN.actualizarEmpleado(Convert.ToInt32(dgvEmpleados.Rows[indice].Cells[0].Value), txtName.Text, txtSurname.Text, txtEmail.Text, cbxSucursal.SelectedIndex);
+            objEmpleadosCLN.actualizarEmpleado(Convert.ToInt32(dgvEmpleados.Rows[indice].Cells[0].Value), txtName.Text, txtSurname.Text, txtEmail.Text, Convert.ToInt32(cbxSucursal.SelectedValue));
 
             MessageBox.Show("Los datos fueron actualizados");
             LimpiarTextBoxs();
@@ -56,17 +80,33 @@ namespace CapaPresentacion
 
             cargarDgv();
         }
-
+        //BOTON ELIMINAR
         private void btnEliminate_Click(object sender, EventArgs e)
         {
+            DialogResult opcion = MessageBox.Show("¿Desea eliminar el producto?", "Eliminar producto", MessageBoxButtons.YesNo);
 
+            if (opcion == DialogResult.Yes)
+            {
+                objEmpleadosCLN.eliminarEmpleado(Convert.ToInt32(dgvEmpleados.Rows[indice].Cells[0].Value));
+                MessageBox.Show("Se eliminó el producto correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                LimpiarTextBoxs();
+                btnEliminate.Visible = false;
+                btnPreEliminar.Visible = true;
+                btnPreEliminar.Enabled = true;
+                btnModify.Enabled = true;
+                cargarDgv();
+            }
+            else
+            { MessageBox.Show("Operación cancelada", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+
+            cargarDgv();
         }
 
         private void btnExaminate_Click(object sender, EventArgs e)
         {
 
         }
-
+        //CLICK EN CELDAS
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;
@@ -100,6 +140,7 @@ namespace CapaPresentacion
             miTabla = objEmpleadosCLN.consultarEmpleados();
             dgvEmpleados.DataSource = miTabla;
         }
+        //LIMPIAR TXT
         private void LimpiarTextBoxs()
         {
             txtEmail.Clear();
@@ -108,12 +149,16 @@ namespace CapaPresentacion
 
         }
 
-
+        //BOTON HABILITAR ELIMINAR
         private void btnPreEliminar_Click(object sender, EventArgs e)
         {
-
+            btnEliminate.Visible = true;
+            btnEliminate.Enabled = true;
+            btnPreEliminar.Visible = false;
+            btnModify.Enabled = false;
         }
 
+        //EVENTO LOAD
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
             cargarDgv();
@@ -121,6 +166,16 @@ namespace CapaPresentacion
             btnModify.Enabled = false;
             btnEliminate.Enabled = false;
             btnPreEliminar.Enabled = false;
+            llenarCbxSucursal();
+        }
+        //LLENAR COMBOBOX SUCUS
+        private void llenarCbxSucursal()
+        {
+            DataTable miTabla = new DataTable();
+            miTabla = objSucursalCLN.consultarSucursales();
+            cbxSucursal.ValueMember = "idSucursal";
+            cbxSucursal.DisplayMember = "nombre";
+            cbxSucursal.DataSource = miTabla;
         }
     }
 }

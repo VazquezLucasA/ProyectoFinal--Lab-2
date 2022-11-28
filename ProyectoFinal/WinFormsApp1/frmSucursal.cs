@@ -14,7 +14,6 @@ namespace CapaPresentacion
    
     public partial class frmSucursal : Form
     {
-
         private SucursalCLN objSucursalCLN;
         private DataTable miTabla;
         private int indice;
@@ -28,7 +27,6 @@ namespace CapaPresentacion
             indice = 0;
             objSucursalCLN = new SucursalCLN();
             miTabla = new DataTable();
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -118,6 +116,7 @@ namespace CapaPresentacion
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             btnPreEliminar.Enabled = false;
+            dgvSucursal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
         private void dgvSucursal_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -167,6 +166,17 @@ namespace CapaPresentacion
             btnEliminar.Enabled = true;
             btnPreEliminar.Visible = false;
             btnModificar.Enabled = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+        //    this.Hide();
+        //    frmMen.Show();
+        //    this.Close();
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
         }
     }
 }

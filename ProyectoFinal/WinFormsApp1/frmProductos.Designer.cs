@@ -48,14 +48,16 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvStock = new System.Windows.Forms.DataGridView();
             this.lblBienvenida = new System.Windows.Forms.Label();
+            this.picAtras = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(687, 395);
+            this.lblCodigo.Location = new System.Drawing.Point(615, 66);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(32, 15);
             this.lblCodigo.TabIndex = 37;
@@ -64,7 +66,7 @@
             // lblCantFilas
             // 
             this.lblCantFilas.AutoSize = true;
-            this.lblCantFilas.Location = new System.Drawing.Point(687, 356);
+            this.lblCantFilas.Location = new System.Drawing.Point(615, 27);
             this.lblCantFilas.Name = "lblCantFilas";
             this.lblCantFilas.Size = new System.Drawing.Size(38, 15);
             this.lblCantFilas.TabIndex = 36;
@@ -73,7 +75,7 @@
             // lblLista
             // 
             this.lblLista.AutoSize = true;
-            this.lblLista.Location = new System.Drawing.Point(687, 304);
+            this.lblLista.Location = new System.Drawing.Point(687, 316);
             this.lblLista.Name = "lblLista";
             this.lblLista.Size = new System.Drawing.Size(13, 15);
             this.lblLista.TabIndex = 35;
@@ -81,29 +83,30 @@
             // 
             // btnAgregarCarrito
             // 
-            this.btnAgregarCarrito.Location = new System.Drawing.Point(633, 246);
+            this.btnAgregarCarrito.Location = new System.Drawing.Point(653, 245);
             this.btnAgregarCarrito.Name = "btnAgregarCarrito";
             this.btnAgregarCarrito.Size = new System.Drawing.Size(138, 48);
             this.btnAgregarCarrito.TabIndex = 34;
             this.btnAgregarCarrito.Text = "Agregar al carrito";
             this.btnAgregarCarrito.UseVisualStyleBackColor = true;
+            this.btnAgregarCarrito.Click += new System.EventHandler(this.btnAgregarCarrito_Click);
             // 
             // btnPreEliminar
             // 
-            this.btnPreEliminar.Location = new System.Drawing.Point(418, 175);
+            this.btnPreEliminar.Location = new System.Drawing.Point(313, 175);
             this.btnPreEliminar.Name = "btnPreEliminar";
             this.btnPreEliminar.Size = new System.Drawing.Size(118, 23);
-            this.btnPreEliminar.TabIndex = 33;
+            this.btnPreEliminar.TabIndex = 5;
             this.btnPreEliminar.Text = "Habilitar Eliminar";
             this.btnPreEliminar.UseVisualStyleBackColor = true;
             this.btnPreEliminar.Click += new System.EventHandler(this.btnPreEliminar_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(671, 189);
+            this.btnLimpiar.Location = new System.Drawing.Point(671, 201);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(100, 38);
-            this.btnLimpiar.TabIndex = 32;
+            this.btnLimpiar.TabIndex = 6;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -111,7 +114,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(671, 142);
+            this.lblPrecio.Location = new System.Drawing.Point(671, 154);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 15);
             this.lblPrecio.TabIndex = 31;
@@ -119,15 +122,15 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(671, 160);
+            this.txtPrecio.Location = new System.Drawing.Point(671, 172);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
-            this.txtPrecio.TabIndex = 30;
+            this.txtPrecio.TabIndex = 2;
             // 
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(671, 98);
+            this.lblStock.Location = new System.Drawing.Point(671, 110);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(36, 15);
             this.lblStock.TabIndex = 29;
@@ -135,15 +138,15 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(671, 116);
+            this.txtStock.Location = new System.Drawing.Point(671, 128);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 23);
-            this.txtStock.TabIndex = 28;
+            this.txtStock.TabIndex = 1;
             // 
             // txtDescrip
             // 
             this.txtDescrip.AutoSize = true;
-            this.txtDescrip.Location = new System.Drawing.Point(671, 54);
+            this.txtDescrip.Location = new System.Drawing.Point(671, 66);
             this.txtDescrip.Name = "txtDescrip";
             this.txtDescrip.Size = new System.Drawing.Size(69, 15);
             this.txtDescrip.TabIndex = 27;
@@ -151,17 +154,17 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(671, 72);
+            this.txtDescripcion.Location = new System.Drawing.Point(671, 84);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 23);
-            this.txtDescripcion.TabIndex = 26;
+            this.txtDescripcion.TabIndex = 0;
             // 
             // btnVender
             // 
             this.btnVender.Location = new System.Drawing.Point(633, 442);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(169, 48);
-            this.btnVender.TabIndex = 25;
+            this.btnVender.TabIndex = 7;
             this.btnVender.Text = "Vender";
             this.btnVender.UseVisualStyleBackColor = true;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
@@ -190,7 +193,7 @@
             this.btnModificar.Location = new System.Drawing.Point(199, 175);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 22;
+            this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -200,7 +203,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(37, 175);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(116, 23);
-            this.btnAgregar.TabIndex = 21;
+            this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar producto";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -231,11 +234,22 @@
             this.lblBienvenida.TabIndex = 54;
             this.lblBienvenida.Text = "Bienvenido ";
             // 
+            // picAtras
+            // 
+            this.picAtras.Image = ((System.Drawing.Image)(resources.GetObject("picAtras.Image")));
+            this.picAtras.Location = new System.Drawing.Point(754, 12);
+            this.picAtras.Name = "picAtras";
+            this.picAtras.Size = new System.Drawing.Size(62, 60);
+            this.picAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAtras.TabIndex = 55;
+            this.picAtras.TabStop = false;
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 543);
+            this.Controls.Add(this.picAtras);
             this.Controls.Add(this.lblBienvenida);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblCantFilas);
@@ -261,6 +275,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +302,6 @@
         private Button btnAgregar;
         private DataGridView dgvStock;
         private Label lblBienvenida;
+        private PictureBox picAtras;
     }
 }

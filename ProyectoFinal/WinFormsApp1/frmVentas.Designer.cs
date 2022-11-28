@@ -29,145 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
-            this.btnAgregarCarrito = new System.Windows.Forms.Button();
-            this.btnPreEliminar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.lblStock = new System.Windows.Forms.Label();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.txtDescrip = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.btnVender = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.lblBienvenida = new System.Windows.Forms.Label();
+            this.lblReporte = new System.Windows.Forms.Label();
+            this.cboSucursal = new System.Windows.Forms.ComboBox();
+            this.lblSucursal = new System.Windows.Forms.Label();
+            this.lblEmpleados = new System.Windows.Forms.Label();
+            this.lblSeleccion = new System.Windows.Forms.Label();
+            this.cboEmpleados = new System.Windows.Forms.ComboBox();
+            this.chkSucursal = new System.Windows.Forms.CheckBox();
+            this.chkEmpleados = new System.Windows.Forms.CheckBox();
+            this.btnDetalles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAgregarCarrito
+            // btnBuscar
             // 
-            this.btnAgregarCarrito.Location = new System.Drawing.Point(608, 243);
-            this.btnAgregarCarrito.Name = "btnAgregarCarrito";
-            this.btnAgregarCarrito.Size = new System.Drawing.Size(138, 48);
-            this.btnAgregarCarrito.TabIndex = 52;
-            this.btnAgregarCarrito.Text = "Agregar al carrito";
-            this.btnAgregarCarrito.UseVisualStyleBackColor = true;
-            // 
-            // btnPreEliminar
-            // 
-            this.btnPreEliminar.Location = new System.Drawing.Point(393, 172);
-            this.btnPreEliminar.Name = "btnPreEliminar";
-            this.btnPreEliminar.Size = new System.Drawing.Size(118, 23);
-            this.btnPreEliminar.TabIndex = 51;
-            this.btnPreEliminar.Text = "Habilitar Eliminar";
-            this.btnPreEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(646, 186);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(100, 38);
-            this.btnLimpiar.TabIndex = 50;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(646, 139);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(40, 15);
-            this.lblPrecio.TabIndex = 49;
-            this.lblPrecio.Text = "Precio";
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(646, 157);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 23);
-            this.txtPrecio.TabIndex = 48;
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(646, 95);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(36, 15);
-            this.lblStock.TabIndex = 47;
-            this.lblStock.Text = "Stock";
-            // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(646, 113);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(100, 23);
-            this.txtStock.TabIndex = 46;
-            // 
-            // txtDescrip
-            // 
-            this.txtDescrip.AutoSize = true;
-            this.txtDescrip.Location = new System.Drawing.Point(646, 51);
-            this.txtDescrip.Name = "txtDescrip";
-            this.txtDescrip.Size = new System.Drawing.Size(69, 15);
-            this.txtDescrip.TabIndex = 45;
-            this.txtDescrip.Text = "Descripcion";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(646, 69);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 23);
-            this.txtDescripcion.TabIndex = 44;
-            // 
-            // btnVender
-            // 
-            this.btnVender.Location = new System.Drawing.Point(608, 439);
-            this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(169, 48);
-            this.btnVender.TabIndex = 43;
-            this.btnVender.Text = "Vender";
-            this.btnVender.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(610, 181);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(169, 48);
+            this.btnBuscar.TabIndex = 43;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // picLogo
             // 
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(1, 51);
+            this.picLogo.Location = new System.Drawing.Point(7, 39);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(572, 114);
             this.picLogo.TabIndex = 42;
             this.picLogo.TabStop = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(312, 172);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 41;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(174, 172);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 40;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(12, 172);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(116, 23);
-            this.btnAgregar.TabIndex = 39;
-            this.btnAgregar.Text = "Agregar producto";
-            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // dgvVentas
             // 
@@ -175,47 +70,124 @@
             this.dgvVentas.AllowUserToDeleteRows = false;
             this.dgvVentas.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(12, 201);
+            this.dgvVentas.Location = new System.Drawing.Point(12, 181);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowTemplate.Height = 25;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVentas.Size = new System.Drawing.Size(567, 286);
+            this.dgvVentas.Size = new System.Drawing.Size(567, 306);
             this.dgvVentas.TabIndex = 38;
+            this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             // 
-            // lblBienvenida
+            // lblReporte
             // 
-            this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblBienvenida.Location = new System.Drawing.Point(174, 11);
-            this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(114, 28);
-            this.lblBienvenida.TabIndex = 53;
-            this.lblBienvenida.Text = "Bienvenido ";
+            this.lblReporte.AutoSize = true;
+            this.lblReporte.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReporte.Location = new System.Drawing.Point(231, 9);
+            this.lblReporte.Name = "lblReporte";
+            this.lblReporte.Size = new System.Drawing.Size(333, 46);
+            this.lblReporte.TabIndex = 53;
+            this.lblReporte.Text = "REPORTE DE VENTAS";
+            // 
+            // cboSucursal
+            // 
+            this.cboSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSucursal.FormattingEnabled = true;
+            this.cboSucursal.Location = new System.Drawing.Point(608, 85);
+            this.cboSucursal.Name = "cboSucursal";
+            this.cboSucursal.Size = new System.Drawing.Size(121, 23);
+            this.cboSucursal.TabIndex = 55;
+            this.cboSucursal.SelectedIndexChanged += new System.EventHandler(this.cboSucursal_SelectedIndexChanged);
+            // 
+            // lblSucursal
+            // 
+            this.lblSucursal.AutoSize = true;
+            this.lblSucursal.Location = new System.Drawing.Point(608, 67);
+            this.lblSucursal.Name = "lblSucursal";
+            this.lblSucursal.Size = new System.Drawing.Size(64, 15);
+            this.lblSucursal.TabIndex = 56;
+            this.lblSucursal.Text = "SUCURSAL";
+            // 
+            // lblEmpleados
+            // 
+            this.lblEmpleados.AutoSize = true;
+            this.lblEmpleados.Location = new System.Drawing.Point(608, 111);
+            this.lblEmpleados.Name = "lblEmpleados";
+            this.lblEmpleados.Size = new System.Drawing.Size(74, 15);
+            this.lblEmpleados.TabIndex = 57;
+            this.lblEmpleados.Text = "EMPLEADOS";
+            // 
+            // lblSeleccion
+            // 
+            this.lblSeleccion.AutoSize = true;
+            this.lblSeleccion.Location = new System.Drawing.Point(610, 43);
+            this.lblSeleccion.Name = "lblSeleccion";
+            this.lblSeleccion.Size = new System.Drawing.Size(119, 15);
+            this.lblSeleccion.TabIndex = 58;
+            this.lblSeleccion.Text = "SELECCIONE FILTROS";
+            // 
+            // cboEmpleados
+            // 
+            this.cboEmpleados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEmpleados.FormattingEnabled = true;
+            this.cboEmpleados.Location = new System.Drawing.Point(608, 129);
+            this.cboEmpleados.Name = "cboEmpleados";
+            this.cboEmpleados.Size = new System.Drawing.Size(121, 23);
+            this.cboEmpleados.TabIndex = 59;
+            // 
+            // chkSucursal
+            // 
+            this.chkSucursal.AutoSize = true;
+            this.chkSucursal.Location = new System.Drawing.Point(735, 87);
+            this.chkSucursal.Name = "chkSucursal";
+            this.chkSucursal.Size = new System.Drawing.Size(56, 19);
+            this.chkSucursal.TabIndex = 62;
+            this.chkSucursal.Text = "Todas";
+            this.chkSucursal.UseVisualStyleBackColor = true;
+            this.chkSucursal.CheckedChanged += new System.EventHandler(this.chkSucursal_CheckedChanged);
+            // 
+            // chkEmpleados
+            // 
+            this.chkEmpleados.AutoSize = true;
+            this.chkEmpleados.Location = new System.Drawing.Point(735, 129);
+            this.chkEmpleados.Name = "chkEmpleados";
+            this.chkEmpleados.Size = new System.Drawing.Size(57, 19);
+            this.chkEmpleados.TabIndex = 63;
+            this.chkEmpleados.Text = "Todos";
+            this.chkEmpleados.UseVisualStyleBackColor = true;
+            this.chkEmpleados.CheckedChanged += new System.EventHandler(this.chkEmpleados_CheckedChanged);
+            // 
+            // btnDetalles
+            // 
+            this.btnDetalles.Location = new System.Drawing.Point(631, 439);
+            this.btnDetalles.Name = "btnDetalles";
+            this.btnDetalles.Size = new System.Drawing.Size(133, 48);
+            this.btnDetalles.TabIndex = 64;
+            this.btnDetalles.Text = "Detalle";
+            this.btnDetalles.UseVisualStyleBackColor = true;
+            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 511);
-            this.Controls.Add(this.lblBienvenida);
-            this.Controls.Add(this.btnAgregarCarrito);
-            this.Controls.Add(this.btnPreEliminar);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.lblStock);
-            this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.txtDescrip);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.btnVender);
+            this.Controls.Add(this.btnDetalles);
+            this.Controls.Add(this.chkEmpleados);
+            this.Controls.Add(this.chkSucursal);
+            this.Controls.Add(this.cboEmpleados);
+            this.Controls.Add(this.lblSeleccion);
+            this.Controls.Add(this.lblEmpleados);
+            this.Controls.Add(this.lblSucursal);
+            this.Controls.Add(this.cboSucursal);
+            this.Controls.Add(this.lblReporte);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.picLogo);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvVentas);
             this.Name = "frmVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVentas";
+            this.Load += new System.EventHandler(this.frmVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
@@ -224,22 +196,17 @@
         }
 
         #endregion
-
-        private Button btnAgregarCarrito;
-        private Button btnPreEliminar;
-        private Button btnLimpiar;
-        private Label lblPrecio;
-        private TextBox txtPrecio;
-        private Label lblStock;
-        private TextBox txtStock;
-        private Label txtDescrip;
-        private TextBox txtDescripcion;
-        private Button btnVender;
+        private Button btnBuscar;
         private PictureBox picLogo;
-        private Button btnEliminar;
-        private Button btnModificar;
-        private Button btnAgregar;
         private DataGridView dgvVentas;
-        private Label lblBienvenida;
+        private Label lblReporte;
+        private ComboBox cboSucursal;
+        private Label lblSucursal;
+        private Label lblEmpleados;
+        private Label lblSeleccion;
+        private ComboBox cboEmpleados;
+        private CheckBox chkSucursal;
+        private CheckBox chkEmpleados;
+        private Button btnDetalles;
     }
 }

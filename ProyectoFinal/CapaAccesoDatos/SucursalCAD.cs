@@ -25,12 +25,8 @@ namespace CapaAccesoDatos
         public DataTable consultarSucursales()
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            //comando.CommandText = "consultarSucursales";
-            //comando.CommandType = CommandType.StoredProcedure;
-
-            comando.CommandText = "select * From sucursal";
-            comando.CommandType = CommandType.Text;
-
+            comando.CommandText = "consultarSucursales";
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             leerTabla = comando.ExecuteReader();
             miTabla.Load(leerTabla);

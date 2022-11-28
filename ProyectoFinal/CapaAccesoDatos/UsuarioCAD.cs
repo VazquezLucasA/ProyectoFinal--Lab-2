@@ -33,5 +33,26 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
             return miTabla;
         }
+       public bool consultarUnaClave(int idUsuario, string clave)
+        {
+            bool bandera = false;
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "recuperarClave";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idUsuario", idUsuario);
+            comando.Parameters.AddWithValue("@contraseña", clave);
+            leerTabla = comando.ExecuteReader();
+            if (leerTabla.HasRows)
+            {
+                bandera = true;
+            }
+            else
+            {
+                bandera = false;
+            }
+            objConexionCAD.cerrarConexion();
+            return bandera;
+        }
     }
 }

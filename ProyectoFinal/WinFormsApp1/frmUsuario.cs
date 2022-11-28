@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaLogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,70 @@ namespace CapaPresentacion
 {
     public partial class frmUsuario : Form
     {
+        private UsuarioCLN objUsuarioCLN;
+        private frmMenu frmMenuInicio;
         public frmUsuario()
         {
             InitializeComponent();
+            objUsuarioCLN= new UsuarioCLN();
+            llenarCboUsuario();
+            frmMenuInicio = new frmMenu();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            bool bandera = false;
+            int idUsuario = Convert.ToInt32(cboUsuarios.SelectedValue);
+            string clave = txtContraseña.Text;
+            bandera = objUsuarioCLN.validarUsuario(idUsuario, clave);
+            if (bandera)
+            {
+                MessageBox.Show("Contraseña correcta. Ingresando...");
+                this.Hide();
+                frmMenuInicio.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Contraseña incorrecta. Contacte al administrador.");
+                cboUsuarios.SelectedIndex = 0;
+                txtContraseña.ForeColor = Color.DimGray;
+                txtContraseña.Text = "CONTRASEÑA";
+                txtContraseña.UseSystemPasswordChar = false;
+
+            }
+
+        }
+        private void llenarCboUsuario()
+        {
+            //cboUsuarios
+            DataTable miTabla = new DataTable();
+            miTabla.Clear();
+            miTabla = objUsuarioCLN.consultarUsuarios();
+            cboUsuarios.DataSource = miTabla;
+            cboUsuarios.ValueMember = "idUsuario";
+            cboUsuarios.DisplayMember = "nombre";
+            cboUsuarios.SelectedIndex = 0;
+        }
+
+        private void txtContraseña_Enter(object sender, EventArgs e)
+        {
+            if(txtContraseña.Text == "CONTRASEÑA")
+            {
+                txtContraseña.Text = "";
+                txtContraseña.ForeColor = Color.Red;
+                txtContraseña.UseSystemPasswordChar= true;
+            }
+        }
+
+        private void txtContraseña_Leave(object sender, EventArgs e)
+        {
+            if (txtContraseña.Text == "")
+            {
+                txtContraseña.Text = "CONTRASEÑA";
+                txtContraseña.ForeColor = Color.DimGray;
+                txtContraseña.UseSystemPasswordChar = false;
+            }
         }
     }
 }
