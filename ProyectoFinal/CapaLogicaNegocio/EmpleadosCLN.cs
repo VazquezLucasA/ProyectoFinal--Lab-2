@@ -43,7 +43,7 @@ namespace CapaLogicaNegocio
 
         public int getIndiceUltFila(int cantFilas)
         {
-            return cantFilas - 2;
+            return cantFilas - 1;
         }
 
         public int getCodigoEmpleado(object a)

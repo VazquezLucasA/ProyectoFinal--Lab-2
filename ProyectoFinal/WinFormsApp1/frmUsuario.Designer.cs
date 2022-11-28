@@ -32,8 +32,6 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.dgvClave = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClave)).BeginInit();
             this.SuspendLayout();
             // 
             // cboUsuarios
@@ -74,22 +72,12 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // dgvClave
-            // 
-            this.dgvClave.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClave.Location = new System.Drawing.Point(482, 5);
-            this.dgvClave.Name = "dgvClave";
-            this.dgvClave.RowTemplate.Height = 25;
-            this.dgvClave.Size = new System.Drawing.Size(306, 160);
-            this.dgvClave.TabIndex = 3;
-            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvClave);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtContraseña);
@@ -98,7 +86,6 @@
             this.Name = "frmUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,6 +97,5 @@
         private TextBox txtContraseña;
         private Label lblUsuario;
         private Button btnIngresar;
-        private DataGridView dgvClave;
     }
 }

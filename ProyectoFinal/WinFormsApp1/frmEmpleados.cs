@@ -46,6 +46,8 @@ namespace CapaPresentacion
             int indiceUltFila = objEmpleadosCLN.getIndiceUltFila(dgvEmpleados.Rows.Count);
             int idEmpleado = objEmpleadosCLN.getCodigoEmpleado(dgvEmpleados.Rows[indiceUltFila].Cells[0].Value);
 
+            lblEmail.Text = idEmpleado.ToString();
+
             DialogResult opcion = MessageBox.Show("¿Está seguro que quiere agregar un nuevo empleado?", "Nuevo empleado", MessageBoxButtons.YesNo);
             if (opcion == DialogResult.Yes)
             {
@@ -167,15 +169,16 @@ namespace CapaPresentacion
             btnEliminate.Enabled = false;
             btnPreEliminar.Enabled = false;
             llenarCbxSucursal();
+            dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         //LLENAR COMBOBOX SUCUS
         private void llenarCbxSucursal()
         {
             DataTable miTabla = new DataTable();
             miTabla = objSucursalCLN.consultarSucursales();
-            cbxSucursal.ValueMember = "idSucursal";
-            cbxSucursal.DisplayMember = "nombre";
             cbxSucursal.DataSource = miTabla;
+            cbxSucursal.ValueMember = "idSucursal";
+            cbxSucursal.DisplayMember = "sucursal";
         }
     }
 }

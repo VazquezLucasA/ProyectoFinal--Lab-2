@@ -34,6 +34,41 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
             return miTabla;
         }
+        public DataTable consultarVentasUnEmpleado(int idEmpleado)
+        {
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "consultarVentasUnEmpleado";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+            leerTabla = comando.ExecuteReader();
+            miTabla.Load(leerTabla);
+            objConexionCAD.cerrarConexion();
+            return miTabla;
+        }
+        public DataTable consultarVentasUnaSucursal(int idSucursal)
+        {
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "consultarVentasUnaSucursal";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idSucursal", idSucursal);
+            leerTabla = comando.ExecuteReader();
+            miTabla.Load(leerTabla);
+            objConexionCAD.cerrarConexion();
+            return miTabla;
+        }
+        public DataTable consultaVentasTodas()
+        {
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "consultaVentasTodas";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leerTabla = comando.ExecuteReader();
+            miTabla.Load(leerTabla);
+            objConexionCAD.cerrarConexion();
+            return miTabla;
+        }
         public void agregarVenta(int idVenta, int cantidad , float total, DateTime fecha, int idProducto, int idEmpleado)
         {
             comando.Connection = objConexionCAD.abrirConeccion();

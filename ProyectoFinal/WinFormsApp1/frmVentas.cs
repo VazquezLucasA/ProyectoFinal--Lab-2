@@ -38,7 +38,8 @@ namespace CapaPresentacion
         private void cargarDgv()
         {
             miTabla.Clear();
-            miTabla = objVentasCLN.consultarVentas();
+            miTabla = objVentasCLN.consultaVentasTodas(); 
+            //miTabla = objVentasCLN.consultarVentas();
             dgvVentas.DataSource = miTabla;
         }
 
@@ -54,30 +55,33 @@ namespace CapaPresentacion
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int idSucursal, idEmpleado;
-            if (banderaEmpleados)
-            {
-                idSucursal = Convert.ToInt32(cboSucursal.SelectedValue);
-                //objVentasCLN.consultarVentasUnEmpleado();
-                //select * where idSucursal
-                if (banderaSucursal)
-                {
-                    //select *
-                    //miTabla.Clear();
-                    //miTabla = objVentasCLN.consultarVentas();
-                    //dgvVentas.DataSource = miTabla;
-                    //objVentasCLN.consultarVentas();
-                }
-            }
 
             idSucursal = Convert.ToInt32(cboSucursal.SelectedValue);
-            idEmpleado = Convert.ToInt32(cboEmpleados.SelectedValue);
-            //objVentasCLN.consultarVentasEmpleadoYSucursal(idSucursal, idEmpleado);
-            //select * where idEmpleado and idSucursal
-            lblEmpleados.Text = idEmpleado.ToString();
-            lblReporte.Text = idSucursal.ToString();
-            miTabla.Clear();
-            miTabla = objVentasCLN.consultarVentas();
-            dgvVentas.DataSource = miTabla;
+            
+
+            if (chkSucursal.Checked)
+            {
+
+                miTabla.Clear();
+                miTabla = objVentasCLN.consultaVentasTodas();
+                dgvVentas.DataSource = miTabla;
+            }
+            if (chkEmpleados.Checked)
+            {
+                idSucursal = Convert.ToInt32(cboSucursal.SelectedValue);
+
+                miTabla.Clear();
+                miTabla = objVentasCLN.consultarVentasUnaSucursal(idSucursal);
+                dgvVentas.DataSource = miTabla;
+            }
+
+            if(!(chkEmpleados.Checked && chkSucursal.Checked)) 
+            {
+                idEmpleado = Convert.ToInt32(cboEmpleados.SelectedValue);
+                miTabla.Clear();
+                miTabla = objVentasCLN.consultarVentasUnEmpleado(idEmpleado);
+                dgvVentas.DataSource = miTabla;
+            }
 
         }
 
@@ -86,21 +90,15 @@ namespace CapaPresentacion
             
             if(chkSucursal.Checked )
             {
-                banderaSucursal = true;
-                banderaEmpleados= true;
                 cboSucursal.Enabled= false;
                 cboEmpleados.Enabled= false;
                 chkEmpleados.Enabled = false;
             }
             else
             {
-                
-                    banderaSucursal = false;
-                    banderaEmpleados = false;
-                    cboSucursal.Enabled = true;
-                    cboEmpleados.Enabled = true;
-                    chkEmpleados.Enabled = true;
-               
+                cboSucursal.Enabled = true;
+                cboEmpleados.Enabled = true;
+                chkEmpleados.Enabled = true;
             }
 
         }
@@ -124,7 +122,7 @@ namespace CapaPresentacion
             tablaSuc.Clear();
             tablaSuc = objSucursalCLN.consultarSucursales();
             cboSucursal.ValueMember = "idSucursal";
-            cboSucursal.DisplayMember = "nombre";
+            cboSucursal.DisplayMember = "sucursal";
             cboSucursal.DataSource = tablaSuc;
             cboSucursal.SelectedIndex = 0;
         }

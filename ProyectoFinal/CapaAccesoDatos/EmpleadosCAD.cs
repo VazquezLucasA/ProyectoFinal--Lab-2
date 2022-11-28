@@ -30,7 +30,7 @@ namespace CapaAccesoDatos
         public DataTable consultarEmpleados()
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = "consultarEmpleados";
+            comando.CommandText = "consultaEmpleadoSuc";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             leerTabla = comando.ExecuteReader();

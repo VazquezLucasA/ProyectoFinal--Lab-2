@@ -33,26 +33,26 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
             return miTabla;
         }
-        public void agregarSucursal(int idSucursal, string nombre, string direccion)
+        public void agregarSucursal(int idSucursal, string sucursal, string direccion)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "agregarSucursal";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idSucursal", idSucursal);
-            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@sucursal", sucursal);
             comando.Parameters.AddWithValue("@direccion", direccion);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
-        public void actualizarSucursal(int idSucursal, string nombre, string direccion)
+        public void actualizarSucursal(int idSucursal, string sucursal, string direccion)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "actualizarSucursal";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idSucursal", idSucursal);
-            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@sucursal", sucursal);
             comando.Parameters.AddWithValue("@direccion", direccion);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();

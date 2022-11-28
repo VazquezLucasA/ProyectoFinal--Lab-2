@@ -52,7 +52,21 @@ namespace CapaLogicaNegocio
             int codigo = numero + 1;
             return codigo;
         }
-
+        public DataTable consultarVentasUnEmpleado(int idEmpleado)
+        {
+            miTabla = objVentasCAD.consultarVentasUnEmpleado(idEmpleado);
+            return miTabla;
+        }
+        public DataTable consultarVentasUnaSucursal(int idSucursal)
+        {
+            miTabla = objVentasCAD.consultarVentasUnaSucursal(idSucursal);
+            return miTabla;
+        }
+        public DataTable consultaVentasTodas()
+        {
+            miTabla = objVentasCAD.consultaVentasTodas();
+            return miTabla;
+        }
 
     }
 }

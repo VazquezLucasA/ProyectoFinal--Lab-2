@@ -39,26 +39,26 @@ namespace CapaPresentacion
         //BOTON INGRESAR SUCURSAL
         private void btnSucursal_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             frmSuc.ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
         //BOTON INGRESAR EMPLEADOS
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             frmEmp.ShowDialog();
-            this.Close();
+            //this.Close();
         }
         
         //BOTON INGRESAR PRODUCTOS
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             frmProduct = new frmProductos(cbxEmpleados.Text);
             frmProduct.ShowDialog();
-            this.Close();
+            //this.Close();
         }
         //BOTON REPORTE DE VENTAS
 
@@ -66,7 +66,7 @@ namespace CapaPresentacion
         {
             DataTable miTabla = new DataTable();
             miTabla = objSucursalCLN.consultarSucursales();
-            cbxSucursal.DisplayMember = "nombre";
+            cbxSucursal.DisplayMember = "sucursal";
             cbxSucursal.ValueMember = "idSucursal";
             cbxSucursal.DataSource = miTabla;
             cbxSucursal.SelectedIndex = 0;
@@ -83,9 +83,9 @@ namespace CapaPresentacion
 
             private void btnVentas_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             objFrmVentas.ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
         private void cbxSucursal_SelectedIndexChanged(object sender, EventArgs e)

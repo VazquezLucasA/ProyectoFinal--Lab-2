@@ -48,16 +48,14 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvStock = new System.Windows.Forms.DataGridView();
             this.lblBienvenida = new System.Windows.Forms.Label();
-            this.picAtras = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtras)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(615, 66);
+            this.lblCodigo.Location = new System.Drawing.Point(687, 12);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(32, 15);
             this.lblCodigo.TabIndex = 37;
@@ -66,7 +64,7 @@
             // lblCantFilas
             // 
             this.lblCantFilas.AutoSize = true;
-            this.lblCantFilas.Location = new System.Drawing.Point(615, 27);
+            this.lblCantFilas.Location = new System.Drawing.Point(633, 13);
             this.lblCantFilas.Name = "lblCantFilas";
             this.lblCantFilas.Size = new System.Drawing.Size(38, 15);
             this.lblCantFilas.TabIndex = 36;
@@ -234,22 +232,11 @@
             this.lblBienvenida.TabIndex = 54;
             this.lblBienvenida.Text = "Bienvenido ";
             // 
-            // picAtras
-            // 
-            this.picAtras.Image = ((System.Drawing.Image)(resources.GetObject("picAtras.Image")));
-            this.picAtras.Location = new System.Drawing.Point(754, 12);
-            this.picAtras.Name = "picAtras";
-            this.picAtras.Size = new System.Drawing.Size(62, 60);
-            this.picAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAtras.TabIndex = 55;
-            this.picAtras.TabStop = false;
-            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 543);
-            this.Controls.Add(this.picAtras);
             this.Controls.Add(this.lblBienvenida);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblCantFilas);
@@ -275,7 +262,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAtras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +288,5 @@
         private Button btnAgregar;
         private DataGridView dgvStock;
         private Label lblBienvenida;
-        private PictureBox picAtras;
     }
 }
