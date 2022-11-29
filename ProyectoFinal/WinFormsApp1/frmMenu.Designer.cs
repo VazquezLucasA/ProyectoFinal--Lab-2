@@ -39,6 +39,7 @@
             this.btnVentas = new System.Windows.Forms.Button();
             this.cbxEmpleados = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCreditos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,11 +138,22 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "SELECCIONE EMPLEADO";
             // 
+            // btnCreditos
+            // 
+            this.btnCreditos.Location = new System.Drawing.Point(700, 12);
+            this.btnCreditos.Name = "btnCreditos";
+            this.btnCreditos.Size = new System.Drawing.Size(88, 28);
+            this.btnCreditos.TabIndex = 30;
+            this.btnCreditos.Text = "CREDITOS";
+            this.btnCreditos.UseVisualStyleBackColor = true;
+            this.btnCreditos.Click += new System.EventHandler(this.btnCreditos_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCreditos);
             this.Controls.Add(this.cbxEmpleados);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVentas);
@@ -174,5 +186,6 @@
         private Button btnVentas;
         private ComboBox cbxEmpleados;
         private Label label1;
+        private Button btnCreditos;
     }
 }

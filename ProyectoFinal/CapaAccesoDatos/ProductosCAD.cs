@@ -87,9 +87,13 @@ namespace CapaAccesoDatos
 
         public void venderProducto(int idProducto) 
         {
-
-
-
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "venderUnProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idProducto", idProducto);
+            comando.ExecuteNonQuery();
+            objConexionCAD.cerrarConexion();
         }
 
         public int getPrecio(int idProducto)

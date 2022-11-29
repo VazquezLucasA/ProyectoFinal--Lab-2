@@ -14,12 +14,13 @@ namespace CapaPresentacion
    
     public partial class frmSucursal : Form
     {
+        //ATRIBUTOS
         private SucursalCLN objSucursalCLN;
         private DataTable miTabla;
         private int indice;
         private string sucursal;
         private string direccion;
-
+        //CONSTRUCTOR
         public frmSucursal()
         {
 
@@ -28,13 +29,14 @@ namespace CapaPresentacion
             objSucursalCLN = new SucursalCLN();
             miTabla = new DataTable();
         }
-
+        //BOTON ELIMINAR
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             DialogResult opcion = MessageBox.Show("¿Desea eliminar la sucursal?", "Eliminar sucursal", MessageBoxButtons.YesNo);
 
             if (opcion == DialogResult.Yes)
             {
+
                 objSucursalCLN.eliminarSucursal(Convert.ToInt32(dgvSucursal.Rows[indice].Cells[0].Value));
                 MessageBox.Show("Se eliminó la sucursal correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 LimpiarTextBoxs();
@@ -49,15 +51,21 @@ namespace CapaPresentacion
 
             cargarDgv();
         }
-
+        //BOTON MODIFICAR
         private void btnModificar_Click(object sender, EventArgs e)
         {
             sucursal= txtSucursal.Text;
             direccion = txtDireccion.Text;
-
-            objSucursalCLN.actualizarSucursal(Convert.ToInt32(dgvSucursal.Rows[indice].Cells[0].Value), sucursal, direccion);
-
-            MessageBox.Show("Los datos fueron actualizados");
+            if(txtSucursal.Text == string.Empty || txtDireccion.Text == string.Empty)
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                objSucursalCLN.actualizarSucursal(Convert.ToInt32(dgvSucursal.Rows[indice].Cells[0].Value), sucursal, direccion);
+                MessageBox.Show("Los datos fueron actualizados");
+            }
+            
             LimpiarTextBoxs();
             btnAgregar.Enabled = true;
             btnPreEliminar.Enabled = false;
@@ -65,7 +73,7 @@ namespace CapaPresentacion
 
             cargarDgv();
         }
-
+        //BOTON AGREGAR
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             int indiceUltFila = objSucursalCLN.getIndiceUltFila(dgvSucursal.Rows.Count);
@@ -77,15 +85,23 @@ namespace CapaPresentacion
                 sucursal = txtSucursal.Text;
                 direccion = txtDireccion.Text;
 
-                try
+
+                if (txtSucursal.Text == string.Empty || txtDireccion.Text == string.Empty)
                 {
-                    objSucursalCLN.agregarSucursal(codigoSucursal, sucursal, direccion);
-                    LimpiarTextBoxs();
+                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Hubo un error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    LimpiarTextBoxs();
+                    try
+                    {
+                        objSucursalCLN.agregarSucursal(codigoSucursal, sucursal, direccion);
+                        LimpiarTextBoxs();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hubo un error: ", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        LimpiarTextBoxs();
+                    }
                 }
             }
             else
@@ -96,6 +112,7 @@ namespace CapaPresentacion
             cargarDgv();
         }
 
+        //BOTON CANCELAR
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimpiarTextBoxs();
@@ -108,7 +125,7 @@ namespace CapaPresentacion
             btnPreEliminar.Visible = true;
             btnPreEliminar.Enabled = false;
         }
-
+        //LOAD
         private void frmSucursal_Load(object sender, EventArgs e)
         {
             cargarDgv();
@@ -118,12 +135,14 @@ namespace CapaPresentacion
             btnPreEliminar.Enabled = false;
             dgvSucursal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
-
+        //CLICK EN LAS CELDAS
         private void dgvSucursal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;
             if (indice == -1)
-            { MessageBox.Show("Seleccione un fila válida"); }
+            { 
+                //MessageBox.Show("Seleccione un fila válida"); 
+            }
             else
             {
                 if (dgvSucursal.Rows[indice].Cells[0].Value == null)
@@ -159,7 +178,7 @@ namespace CapaPresentacion
             txtDireccion.Clear();
             
         }
-
+        //BOTON PRE ELIMINAR
         private void btnPreEliminar_Click(object sender, EventArgs e)
         {
             btnEliminar.Visible = true;
@@ -168,6 +187,7 @@ namespace CapaPresentacion
             btnModificar.Enabled = false;
         }
 
+        //INTENTOS DE BOTON ATRAS FALLIDO...
         private void pictureBox1_Click(object sender, EventArgs e)
         {
         //    this.Hide();

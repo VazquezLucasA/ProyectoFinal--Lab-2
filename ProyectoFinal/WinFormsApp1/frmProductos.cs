@@ -24,7 +24,6 @@ namespace WinFormsApp1
         private float precio;
         private int indiceCarrito;
         private string nombreBienvenida;
-        private int asd;
         private string nombreProducto;
         private int[] idProductos;
         private float precioVenta;
@@ -41,7 +40,6 @@ namespace WinFormsApp1
             indiceCarrito = 0;
             nombreBienvenida = nombreBienvenido;
             nombreProducto = "";
-            asd= 0;
             idProductos = new int[5];
             this.idEmpleado= idEmpleado;
         }
@@ -55,7 +53,7 @@ namespace WinFormsApp1
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             btnPreEliminar.Enabled = false;
-            lblBienvenida.Text += nombreBienvenida;
+            lblBienvenida.Text += nombreBienvenida + "!";
         }
 
         //CLICK EN LAS CELDAS
@@ -63,10 +61,12 @@ namespace WinFormsApp1
         {
             indice = e.RowIndex;
             nombreProducto = dgvStock.Rows[indice].Cells[1].Value.ToString();
-            precioVenta = Convert.ToInt32(dgvStock.Rows[indice].Cells[2].Value);
+            //precioVenta = Convert.ToInt32(dgvStock.Rows[indice].Cells[2].Value);
             lblProductoTres.Text = indice.ToString();
             if (indice == -1)
-            { MessageBox.Show("Seleccione un fila válida"); }
+            { 
+                MessageBox.Show("Seleccione un fila válida"); 
+            }
             else
             {
                 if (dgvStock.Rows[indice].Cells[0].Value == null)
@@ -94,6 +94,7 @@ namespace WinFormsApp1
             miTabla = objProductoCLN.consultarProductos();
             dgvStock.DataSource = miTabla;
         }
+
         //BOTON AGREGAR 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -104,41 +105,56 @@ namespace WinFormsApp1
             if (opcion == DialogResult.Yes)
             {
                 //indice = dgvStock.Rows.Add();
-                precio = Convert.ToInt32(txtPrice.Text);
-                stock = Convert.ToInt32(txtStocki.Text);
-
-                try
+                if (txtDescripcion.Text == string.Empty || txtPrice.Text == string.Empty || txtStocki.Text == string.Empty)
                 {
-                    objProductoCLN.agregarProducto(codigoProducto, txtDescripcion.Text, precio, stock);
-                    LimpiarTextBoxs();
+                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Hubo un error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    LimpiarTextBoxs();
+                    try
+                    {
+                        precio = float.Parse(txtPrice.Text);
+                        stock = Convert.ToInt32(txtStocki.Text);
+                        objProductoCLN.agregarProducto(codigoProducto, txtDescripcion.Text, precio, stock);
+                    }
+                    catch 
+                    {
+                        MessageBox.Show("Debe ingresar los tipos de datos correctos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Carga de producto cancelada");
-                LimpiarTextBoxs();
             }
+            LimpiarTextBoxs();
             cargarDgv();
         }
         //BOTON MODIFICAR
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            stock = Convert.ToInt32(txtStocki.Text);
-            precio = float.Parse(txtPrice.Text); 
-
-            objProductoCLN.actualizarProducto(Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value), txtDescripcion.Text, precio, stock);
-
-            MessageBox.Show("Los datos fueron actualizados");
+            if (txtDescripcion.Text == string.Empty || txtPrice.Text == string.Empty || txtStocki.Text == string.Empty)
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    stock = Convert.ToInt32(txtStocki.Text);
+                    precio = float.Parse(txtPrice.Text);
+                    objProductoCLN.actualizarProducto(Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value), txtDescripcion.Text, precio, stock);
+                    MessageBox.Show("Los datos fueron actualizados");
+                }
+                catch
+                {
+                    MessageBox.Show("Debe ingresar los tipos de datos correctos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }   
             LimpiarTextBoxs();
             btnAgregar.Enabled = true;
             btnPreEliminar.Enabled = false;
             btnModificar.Enabled = false;
-
             cargarDgv();
         }
 
@@ -165,7 +181,6 @@ namespace WinFormsApp1
                 btnPreEliminar.Visible = true;
                 btnPreEliminar.Enabled = true;
                 btnModificar.Enabled = true;
-                cargarDgv();
             }
             else
             { MessageBox.Show("Operación cancelada", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
@@ -178,18 +193,12 @@ namespace WinFormsApp1
         {
             DialogResult opcion = MessageBox.Show("¿Desea confirmar la venta del producto?", "Venta de producto", MessageBoxButtons.YesNo);
             if (opcion == DialogResult.Yes)
-            {
-
-                
-                
-
+            {    
                 try
                 {
                     //vender carrito
                     float venta = objProductoCLN.venderProductos(idProductos, idEmpleado);
-
                     MessageBox.Show($"El total a pagar es {venta}", "Venta de producto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    LimpiarTextBoxs();
                 }
                 catch
                 {
@@ -205,6 +214,7 @@ namespace WinFormsApp1
                 idProductos[i] = 0;
             }
             lblLista.Text = "";
+            LimpiarTextBoxs();
             cargarDgv();
         }
 
@@ -229,24 +239,9 @@ namespace WinFormsApp1
             btnPreEliminar.Visible = false;
             btnModificar.Enabled = false;
         }
-
-        private void dgvStock_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //int indiceCarrito = 0;
-            //lblLista.Text += dgvStock.Rows[indice].Cells[1].Value.ToString() + "\n";
-            string[] listado = new string[5];
-            int[] idProductos = new int[5];
-
-        }
-
+        //BOTON AGREGAR CARRITO
         private void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
-            
-
-            
-
-
-
             if (indiceCarrito < 5)
             {
                 idProductos[indiceCarrito] = Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value);
@@ -265,6 +260,7 @@ namespace WinFormsApp1
             lblProductoCuatro.Text = idProductos[4].ToString();
         }
 
+        //BOTON VACIAR CARRITO
         private void btnVaciar_Click(object sender, EventArgs e)
         {
             indiceCarrito = 0;
@@ -274,6 +270,15 @@ namespace WinFormsApp1
             }
             lblLista.Text = "";
             cargarDgv();
+        }
+
+        //INTENTO DE AGREGAR AL CARRITO CON DOBLE CLICK FALLIDO...
+        private void dgvStock_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //int indiceCarrito = 0;
+            //lblLista.Text += dgvStock.Rows[indice].Cells[1].Value.ToString() + "\n";
+            string[] listado = new string[5];
+            int[] idProductos = new int[5];
         }
     }
 }

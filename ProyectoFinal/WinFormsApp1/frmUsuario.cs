@@ -19,8 +19,8 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             objUsuarioCLN= new UsuarioCLN();
-            llenarCboUsuario();
             frmMenuInicio = new frmMenu();
+            llenarCboUsuario();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

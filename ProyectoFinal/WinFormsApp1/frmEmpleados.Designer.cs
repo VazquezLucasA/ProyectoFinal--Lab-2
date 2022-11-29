@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 676);
+            this.ClientSize = new System.Drawing.Size(644, 596);
             this.Controls.Add(this.btnPreEliminar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEliminate);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+TutVqr/5K5wLPUFjtlpiq2qdZ7xO7oQuC5sNdzWxuzj72cN074C/b2yIiI4ON/GtHJogmcoqC8xLJ7eo8jgDA==",
+  "dgSpecHash": "hd6d6dft4JSXGCt9iLnbLS6HVGFO0pSwHSXChecKTW2zGbeNX0C/PKcMWU3TlyXm25ucKsCmNcOqiCmDpR7mVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2 - copia (2)\\ProyectoFinal\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj",
+  "projectFilePath": "C:\\Users\\Lucas\\Desktop\\ProyectoFinal--Lab-2\\ProyectoFinal\\CapaLogicaNegocio\\CapaLogicaNegocio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

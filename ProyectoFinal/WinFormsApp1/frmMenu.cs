@@ -14,22 +14,28 @@ namespace CapaPresentacion
 {
     public partial class frmMenu : Form
     {
+        //MIEMBROS ATRIBUTOS
         private frmSucursal frmSuc;
         private frmEmpleados frmEmp;
         private frmProductos frmProduct;
         private frmVentas objFrmVentas;
         private SucursalCLN objSucursalCLN;
         private EmpleadosCLN objEmpleadosCLN;
+        private frmCreditos frmCredit;
+
+        //CONSTRUCTOR
         public frmMenu()
         {
             InitializeComponent();
             frmSuc = new frmSucursal();
-            frmEmp = new frmEmpleados(); 
-            
+            frmEmp = new frmEmpleados();
+            frmCredit = new frmCreditos();
+
             objFrmVentas = new frmVentas();
             objSucursalCLN= new SucursalCLN();
             objEmpleadosCLN = new EmpleadosCLN();
         }
+        //LOAD
         private void frmMenu_Load(object sender, EventArgs e)
         {
             llenarCbxSucursal();
@@ -60,8 +66,7 @@ namespace CapaPresentacion
             frmProduct.ShowDialog();
             //this.Close();
         }
-        //BOTON REPORTE DE VENTAS
-
+        //COMBOBOX SUCURSAL
         private void llenarCbxSucursal()
         {
             DataTable miTabla = new DataTable();
@@ -71,6 +76,7 @@ namespace CapaPresentacion
             cbxSucursal.DataSource = miTabla;
             cbxSucursal.SelectedIndex = 0;
         }
+        //COMBOBOX EMPLEADOS
         private void llenarCbxEmpleado()
         {
             DataTable miTabla = new DataTable();
@@ -81,16 +87,23 @@ namespace CapaPresentacion
             cbxEmpleados.DisplayMember = "apellido";
         }
 
+        //BOTON INGRESAR VENTAS
             private void btnVentas_Click(object sender, EventArgs e)
         {
             //this.Hide();
             objFrmVentas.ShowDialog();
             //this.Close();
         }
-
+        //SELECTED INDEX CHANGED EVENTO
         private void cbxSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
             llenarCbxEmpleado();
+        }
+
+        //BTN CREDITOS
+        private void btnCreditos_Click(object sender, EventArgs e)
+        {
+            frmCredit.Show();
         }
     }
 }

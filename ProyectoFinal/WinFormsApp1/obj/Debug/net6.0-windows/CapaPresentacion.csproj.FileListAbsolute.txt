@@ -101,3 +101,4 @@ C:\Users\Lucas\Desktop\ProyectoFinal--Lab-2 - copia (2)\ProyectoFinal\WinFormsAp
 C:\Users\Lucas\Desktop\ProyectoFinal--Lab-2 - copia (2)\ProyectoFinal\WinFormsApp1\obj\Debug\net6.0-windows\CapaPresentacion.pdb
 C:\Users\Lucas\Desktop\ProyectoFinal--Lab-2 - copia (2)\ProyectoFinal\WinFormsApp1\obj\Debug\net6.0-windows\CapaPresentacion.genruntimeconfig.cache
 C:\Users\Lucas\Desktop\ProyectoFinal--Lab-2 - copia (2)\ProyectoFinal\WinFormsApp1\obj\Debug\net6.0-windows\ref\CapaPresentacion.dll
+C:\Users\Lucas\Desktop\ProyectoFinal--Lab-2\ProyectoFinal\WinFormsApp1\obj\Debug\net6.0-windows\CapaPresentacion.frmCreditos.resources
