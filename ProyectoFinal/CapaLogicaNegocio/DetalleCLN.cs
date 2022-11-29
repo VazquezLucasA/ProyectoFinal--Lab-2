@@ -11,18 +11,18 @@ namespace CapaLogicaNegocio
     public class DetalleCLN
     {
         private DataTable miTabla;
-        private DetalleCLN objDetalleCAD;
+        private DetalleCAD objDetalleCAD;
 
         public DetalleCLN()
         {
             miTabla = new DataTable();
-            objDetalleCAD = new DetalleCLN();
+            objDetalleCAD = new DetalleCAD();
         }
 
-        public DataTable consultarEmpleados()
+        public DataTable consultarDetalles(int idVenta)
         {
             miTabla.Clear();
-            miTabla = objDetalleCAD.consultar();
+            miTabla = objDetalleCAD.consultarDetalles(idVenta);
             return miTabla;
         }
     }

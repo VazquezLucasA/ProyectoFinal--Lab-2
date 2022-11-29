@@ -62,6 +62,8 @@
             // 
             this.dgvDetalles.AllowUserToAddRows = false;
             this.dgvDetalles.AllowUserToDeleteRows = false;
+            this.dgvDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetalles.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalles.Location = new System.Drawing.Point(12, 150);
             this.dgvDetalles.Name = "dgvDetalles";
@@ -94,6 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblAtras);
             this.Controls.Add(this.picAtras);
@@ -102,7 +105,7 @@
             this.Controls.Add(this.picLogo);
             this.Name = "frmDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Detalles";
             this.Load += new System.EventHandler(this.frmDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();

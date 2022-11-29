@@ -89,6 +89,8 @@
             // 
             this.dgvEmpleados.AllowUserToAddRows = false;
             this.dgvEmpleados.AllowUserToDeleteRows = false;
+            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Location = new System.Drawing.Point(16, 376);
             this.dgvEmpleados.Name = "dgvEmpleados";
@@ -196,7 +198,7 @@
             this.Controls.Add(this.cbxSucursal);
             this.Name = "frmEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEmpleados";
+            this.Text = "Empleados";
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);

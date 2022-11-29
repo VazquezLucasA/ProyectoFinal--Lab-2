@@ -14,13 +14,13 @@ namespace CapaPresentacion
     public partial class frmDetalle : Form
     {
         private DataTable miTabla;
-        private VentasCLN objVentasCLN;
+        private DetalleCLN objDetalleCLN;
         private int idVenta;
         public frmDetalle(int indice)
         {
             InitializeComponent();
             miTabla = new DataTable();
-            objVentasCLN = new VentasCLN();
+            objDetalleCLN = new DetalleCLN();
             idVenta = indice;
         }
         
@@ -32,11 +32,12 @@ namespace CapaPresentacion
         private void frmDetalle_Load(object sender, EventArgs e)
         {
             cargarDgv();
+            dgvDetalles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void cargarDgv()
         {
             miTabla.Clear();
-            //miTabla = objVentasCLN.consultarVentas(idVenta);
+            miTabla = objDetalleCLN.consultarDetalles(idVenta);
             dgvDetalles.DataSource = miTabla;
         }
     }

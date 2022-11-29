@@ -69,32 +69,28 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
             return miTabla;
         }
-        public void agregarVenta(int idVenta, int cantidad , float total, DateTime fecha, int idProducto, int idEmpleado)
+        public void agregarVenta(int idVenta,float total, DateTime fecha, int idEmpleado)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "agregarVenta";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idVenta", idVenta);
-            comando.Parameters.AddWithValue("@cantidad", cantidad);
             comando.Parameters.AddWithValue("@total", total);
-            comando.Parameters.AddWithValue("@fecha", fecha);
-            comando.Parameters.AddWithValue("@idProducto", idProducto);
+            comando.Parameters.AddWithValue("@fechaVenta", fecha); 
             comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
-        public void actualizarVenta(int idVenta, int cantidad, float total, DateTime fecha, int idProducto, int idEmpleado)
+        public void actualizarVenta(int idVenta, float total, DateTime fecha, int idEmpleado)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "actualizarVenta";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idVenta", idVenta);
-            comando.Parameters.AddWithValue("@cantidad", cantidad);
             comando.Parameters.AddWithValue("@total", total);
-            comando.Parameters.AddWithValue("@fecha", fecha);
-            comando.Parameters.AddWithValue("@idProducto", idProducto);
+            comando.Parameters.AddWithValue("@fechaVenta", fecha);
             comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
@@ -110,5 +106,27 @@ namespace CapaAccesoDatos
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
+        public int getIdVenta()
+        {
+            
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "select top 1 idVenta from Venta order by idVenta desc";
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.Clear();
+            object objIdVenta = comando.ExecuteScalar();
+            objConexionCAD.cerrarConexion();
+            int idVenta = Convert.ToInt32(objIdVenta);
+            return idVenta;
+        }
+
     }
 }
+
+
+//SqlConnection con = new SqlConnection("connection string");
+//SqlCommand cmd = new SqlConnection(SqlQuery, Con);
+//Con.Open();
+//TextBox1.Text = cmd.ExecuteScalar();
+//Con.Close();
+
+

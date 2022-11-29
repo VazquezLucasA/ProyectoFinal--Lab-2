@@ -101,6 +101,7 @@
             // 
             this.dgvSucursal.AllowUserToAddRows = false;
             this.dgvSucursal.AllowUserToDeleteRows = false;
+            this.dgvSucursal.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSucursal.Location = new System.Drawing.Point(12, 220);
             this.dgvSucursal.Name = "dgvSucursal";
@@ -154,7 +155,7 @@
             this.Controls.Add(this.lblSucursal);
             this.Name = "frmSucursal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSucursal";
+            this.Text = "Sucursales";
             this.Load += new System.EventHandler(this.frmSucursal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).EndInit();
             this.ResumeLayout(false);

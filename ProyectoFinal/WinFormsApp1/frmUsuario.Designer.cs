@@ -47,7 +47,7 @@
             // 
             this.txtContraseña.Location = new System.Drawing.Point(198, 174);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(100, 23);
+            this.txtContraseña.Size = new System.Drawing.Size(121, 23);
             this.txtContraseña.TabIndex = 1;
             this.txtContraseña.Text = "CONTRASEÑA";
             this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
@@ -64,9 +64,9 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(388, 170);
+            this.btnIngresar.Location = new System.Drawing.Point(377, 163);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresar.Size = new System.Drawing.Size(74, 34);
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.lblUsuario);
@@ -85,7 +85,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUsuario";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

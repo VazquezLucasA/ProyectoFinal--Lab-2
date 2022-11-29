@@ -48,8 +48,9 @@ namespace CapaPresentacion
             cargarDgv();
             llenarCboSucursales();
             llenarCboEmpleados();
-            dgvVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-
+            dgvVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            chkEmpleados.Visible=false;
+            chkSucursal.Visible=false;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -59,17 +60,18 @@ namespace CapaPresentacion
             idSucursal = Convert.ToInt32(cboSucursal.SelectedValue);
             
 
-            if (chkSucursal.Checked)
+            if (chkSucursal.Checked && chkEmpleados.Checked==false)
             {
-
                 miTabla.Clear();
                 miTabla = objVentasCLN.consultaVentasTodas();
                 dgvVentas.DataSource = miTabla;
             }
             if (chkEmpleados.Checked)
             {
+                lblEmpleados.Text= cboEmpleados.Text;
+                
                 idSucursal = Convert.ToInt32(cboSucursal.SelectedValue);
-
+                lblReporte.Text = idSucursal.ToString();
                 miTabla.Clear();
                 miTabla = objVentasCLN.consultarVentasUnaSucursal(idSucursal);
                 dgvVentas.DataSource = miTabla;

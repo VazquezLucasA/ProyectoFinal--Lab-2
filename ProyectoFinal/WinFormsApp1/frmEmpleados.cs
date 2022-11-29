@@ -169,16 +169,19 @@ namespace CapaPresentacion
             btnEliminate.Enabled = false;
             btnPreEliminar.Enabled = false;
             llenarCbxSucursal();
-            dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         //LLENAR COMBOBOX SUCUS
         private void llenarCbxSucursal()
         {
             DataTable miTabla = new DataTable();
+            miTabla.Clear();
+            cbxSucursal.DataSource = miTabla;
             miTabla = objSucursalCLN.consultarSucursales();
             cbxSucursal.DataSource = miTabla;
             cbxSucursal.ValueMember = "idSucursal";
             cbxSucursal.DisplayMember = "sucursal";
+            cbxSucursal.SelectedIndex = 0;
         }
     }
 }

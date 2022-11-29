@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblCantFilas = new System.Windows.Forms.Label();
+            this.lblProductoCero = new System.Windows.Forms.Label();
+            this.lblProductoTres = new System.Windows.Forms.Label();
             this.lblLista = new System.Windows.Forms.Label();
             this.btnAgregarCarrito = new System.Windows.Forms.Button();
             this.btnPreEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtStocki = new System.Windows.Forms.TextBox();
             this.lblStock = new System.Windows.Forms.Label();
-            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtDescrip = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnVender = new System.Windows.Forms.Button();
@@ -48,27 +48,31 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvStock = new System.Windows.Forms.DataGridView();
             this.lblBienvenida = new System.Windows.Forms.Label();
+            this.lblProductoUno = new System.Windows.Forms.Label();
+            this.lblProductoCuatro = new System.Windows.Forms.Label();
+            this.lblProductoDos = new System.Windows.Forms.Label();
+            this.btnVaciar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblCodigo
+            // lblProductoCero
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(687, 12);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(32, 15);
-            this.lblCodigo.TabIndex = 37;
-            this.lblCodigo.Text = "label";
+            this.lblProductoCero.AutoSize = true;
+            this.lblProductoCero.Location = new System.Drawing.Point(633, 9);
+            this.lblProductoCero.Name = "lblProductoCero";
+            this.lblProductoCero.Size = new System.Drawing.Size(32, 15);
+            this.lblProductoCero.TabIndex = 37;
+            this.lblProductoCero.Text = "label";
             // 
-            // lblCantFilas
+            // lblProductoTres
             // 
-            this.lblCantFilas.AutoSize = true;
-            this.lblCantFilas.Location = new System.Drawing.Point(633, 13);
-            this.lblCantFilas.Name = "lblCantFilas";
-            this.lblCantFilas.Size = new System.Drawing.Size(38, 15);
-            this.lblCantFilas.TabIndex = 36;
-            this.lblCantFilas.Text = "label4";
+            this.lblProductoTres.AutoSize = true;
+            this.lblProductoTres.Location = new System.Drawing.Point(633, 35);
+            this.lblProductoTres.Name = "lblProductoTres";
+            this.lblProductoTres.Size = new System.Drawing.Size(38, 15);
+            this.lblProductoTres.TabIndex = 36;
+            this.lblProductoTres.Text = "label4";
             // 
             // lblLista
             // 
@@ -81,9 +85,9 @@
             // 
             // btnAgregarCarrito
             // 
-            this.btnAgregarCarrito.Location = new System.Drawing.Point(653, 245);
+            this.btnAgregarCarrito.Location = new System.Drawing.Point(633, 245);
             this.btnAgregarCarrito.Name = "btnAgregarCarrito";
-            this.btnAgregarCarrito.Size = new System.Drawing.Size(138, 48);
+            this.btnAgregarCarrito.Size = new System.Drawing.Size(96, 48);
             this.btnAgregarCarrito.TabIndex = 34;
             this.btnAgregarCarrito.Text = "Agregar al carrito";
             this.btnAgregarCarrito.UseVisualStyleBackColor = true;
@@ -118,12 +122,12 @@
             this.lblPrecio.TabIndex = 31;
             this.lblPrecio.Text = "Precio";
             // 
-            // txtPrecio
+            // txtStocki
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(671, 172);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 23);
-            this.txtPrecio.TabIndex = 2;
+            this.txtStocki.Location = new System.Drawing.Point(671, 128);
+            this.txtStocki.Name = "txtStocki";
+            this.txtStocki.Size = new System.Drawing.Size(100, 23);
+            this.txtStocki.TabIndex = 2;
             // 
             // lblStock
             // 
@@ -134,12 +138,12 @@
             this.lblStock.TabIndex = 29;
             this.lblStock.Text = "Stock";
             // 
-            // txtStock
+            // txtPrice
             // 
-            this.txtStock.Location = new System.Drawing.Point(671, 128);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(100, 23);
-            this.txtStock.TabIndex = 1;
+            this.txtPrice.Location = new System.Drawing.Point(671, 172);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(100, 23);
+            this.txtPrice.TabIndex = 1;
             // 
             // txtDescrip
             // 
@@ -210,6 +214,7 @@
             // 
             this.dgvStock.AllowUserToAddRows = false;
             this.dgvStock.AllowUserToDeleteRows = false;
+            this.dgvStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStock.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Location = new System.Drawing.Point(37, 204);
@@ -232,22 +237,63 @@
             this.lblBienvenida.TabIndex = 54;
             this.lblBienvenida.Text = "Bienvenido ";
             // 
+            // lblProductoUno
+            // 
+            this.lblProductoUno.AutoSize = true;
+            this.lblProductoUno.Location = new System.Drawing.Point(679, 9);
+            this.lblProductoUno.Name = "lblProductoUno";
+            this.lblProductoUno.Size = new System.Drawing.Size(32, 15);
+            this.lblProductoUno.TabIndex = 55;
+            this.lblProductoUno.Text = "label";
+            // 
+            // lblProductoCuatro
+            // 
+            this.lblProductoCuatro.AutoSize = true;
+            this.lblProductoCuatro.Location = new System.Drawing.Point(679, 35);
+            this.lblProductoCuatro.Name = "lblProductoCuatro";
+            this.lblProductoCuatro.Size = new System.Drawing.Size(32, 15);
+            this.lblProductoCuatro.TabIndex = 56;
+            this.lblProductoCuatro.Text = "label";
+            // 
+            // lblProductoDos
+            // 
+            this.lblProductoDos.AutoSize = true;
+            this.lblProductoDos.Location = new System.Drawing.Point(717, 9);
+            this.lblProductoDos.Name = "lblProductoDos";
+            this.lblProductoDos.Size = new System.Drawing.Size(32, 15);
+            this.lblProductoDos.TabIndex = 57;
+            this.lblProductoDos.Text = "label";
+            // 
+            // btnVaciar
+            // 
+            this.btnVaciar.Location = new System.Drawing.Point(735, 245);
+            this.btnVaciar.Name = "btnVaciar";
+            this.btnVaciar.Size = new System.Drawing.Size(81, 48);
+            this.btnVaciar.TabIndex = 58;
+            this.btnVaciar.Text = "Vaciar carrito";
+            this.btnVaciar.UseVisualStyleBackColor = true;
+            this.btnVaciar.Click += new System.EventHandler(this.btnVaciar_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 543);
+            this.Controls.Add(this.btnVaciar);
+            this.Controls.Add(this.lblProductoDos);
+            this.Controls.Add(this.lblProductoCuatro);
+            this.Controls.Add(this.lblProductoUno);
             this.Controls.Add(this.lblBienvenida);
-            this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.lblCantFilas);
+            this.Controls.Add(this.lblProductoCero);
+            this.Controls.Add(this.lblProductoTres);
             this.Controls.Add(this.lblLista);
             this.Controls.Add(this.btnAgregarCarrito);
             this.Controls.Add(this.btnPreEliminar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtStocki);
             this.Controls.Add(this.lblStock);
-            this.Controls.Add(this.txtStock);
+            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtDescrip);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnVender);
@@ -258,7 +304,7 @@
             this.Controls.Add(this.dgvStock);
             this.Name = "frmProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Productos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
@@ -269,16 +315,16 @@
 
         #endregion
 
-        private Label lblCodigo;
-        private Label lblCantFilas;
+        private Label lblProductoCero;
+        private Label lblProductoTres;
         private Label lblLista;
         private Button btnAgregarCarrito;
         private Button btnPreEliminar;
         private Button btnLimpiar;
         private Label lblPrecio;
-        private TextBox txtPrecio;
+        private TextBox txtStocki;
         private Label lblStock;
-        private TextBox txtStock;
+        private TextBox txtPrice;
         private Label txtDescrip;
         private TextBox txtDescripcion;
         private Button btnVender;
@@ -288,5 +334,9 @@
         private Button btnAgregar;
         private DataGridView dgvStock;
         private Label lblBienvenida;
+        private Label lblProductoUno;
+        private Label lblProductoCuatro;
+        private Label lblProductoDos;
+        private Button btnVaciar;
     }
 }

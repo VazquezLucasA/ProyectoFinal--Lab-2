@@ -56,7 +56,7 @@ namespace CapaPresentacion
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             //this.Hide();
-            frmProduct = new frmProductos(cbxEmpleados.Text);
+            frmProduct = new frmProductos(cbxEmpleados.Text, Convert.ToInt32(cbxEmpleados.SelectedValue));
             frmProduct.ShowDialog();
             //this.Close();
         }

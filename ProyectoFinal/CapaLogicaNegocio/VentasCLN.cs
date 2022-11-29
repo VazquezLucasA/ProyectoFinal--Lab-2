@@ -26,9 +26,9 @@ namespace CapaLogicaNegocio
             return miTabla;
         }
 
-        public void agregarVenta(int idVenta, int cantidad, float total, DateTime fechaVenta, int idProducto, int idEmpleado)
+        public void agregarVenta(int idVenta, float total, DateTime fechaVenta, int idEmpleado)
         {
-            objVentasCAD.agregarVenta(idVenta, cantidad, total, fechaVenta, idProducto, idEmpleado);
+            objVentasCAD.agregarVenta(idVenta, total, fechaVenta, idEmpleado);
         }
 
         public void eliminarVenta(int idVenta)
@@ -36,9 +36,9 @@ namespace CapaLogicaNegocio
             objVentasCAD.eliminarVenta(idVenta);
         }
 
-        public void actualizarVenta(int idVenta, int cantidad, float total, DateTime fechaVenta, int idProducto, int idEmpleado)
+        public void actualizarVenta(int idVenta, float total, DateTime fechaVenta, int idEmpleado)
         {
-            objVentasCAD.actualizarVenta(idVenta, cantidad, total, fechaVenta, idProducto, idEmpleado);
+            objVentasCAD.actualizarVenta(idVenta, total, fechaVenta, idEmpleado);
         }
 
         public int getIndiceUltFila(int cantFilas)

@@ -27,8 +27,10 @@ namespace WinFormsApp1
         private int asd;
         private string nombreProducto;
         private int[] idProductos;
+        private float precioVenta;
+        private int idEmpleado;
         //CONSTRUCTOR
-        public frmProductos(string nombreBienvenido)
+        public frmProductos(string nombreBienvenido, int idEmpleado)
         {
             InitializeComponent();
             indice = 0;
@@ -41,6 +43,7 @@ namespace WinFormsApp1
             nombreProducto = "";
             asd= 0;
             idProductos = new int[5];
+            this.idEmpleado= idEmpleado;
         }
         //MIEMBROS METODOS
 
@@ -60,7 +63,8 @@ namespace WinFormsApp1
         {
             indice = e.RowIndex;
             nombreProducto = dgvStock.Rows[indice].Cells[1].Value.ToString();
-            lblCantFilas.Text = indice.ToString();
+            precioVenta = Convert.ToInt32(dgvStock.Rows[indice].Cells[2].Value);
+            lblProductoTres.Text = indice.ToString();
             if (indice == -1)
             { MessageBox.Show("Seleccione un fila válida"); }
             else
@@ -77,8 +81,8 @@ namespace WinFormsApp1
                     btnPreEliminar.Visible = true;
                     btnModificar.Enabled = true;
                     txtDescripcion.Text = (dgvStock.Rows[indice].Cells[1].Value).ToString();
-                    txtStock.Text = (dgvStock.Rows[indice].Cells[2].Value).ToString();
-                    txtPrecio.Text = (dgvStock.Rows[indice].Cells[3].Value).ToString();
+                    txtPrice.Text = (dgvStock.Rows[indice].Cells[2].Value).ToString();
+                    txtStocki.Text = (dgvStock.Rows[indice].Cells[3].Value).ToString();
                 }
             }
         }
@@ -100,12 +104,12 @@ namespace WinFormsApp1
             if (opcion == DialogResult.Yes)
             {
                 //indice = dgvStock.Rows.Add();
-                stock = Convert.ToInt32(txtStock.Text);
-                precio = Convert.ToInt32(txtPrecio.Text);
+                precio = Convert.ToInt32(txtPrice.Text);
+                stock = Convert.ToInt32(txtStocki.Text);
 
                 try
                 {
-                    objProductoCLN.agregarProducto(codigoProducto, txtDescripcion.Text, stock, precio);
+                    objProductoCLN.agregarProducto(codigoProducto, txtDescripcion.Text, precio, stock);
                     LimpiarTextBoxs();
                 }
                 catch (Exception ex)
@@ -124,10 +128,10 @@ namespace WinFormsApp1
         //BOTON MODIFICAR
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            stock = Convert.ToInt32(txtStock.Text);
-            precio = float.Parse(txtPrecio.Text);
+            stock = Convert.ToInt32(txtStocki.Text);
+            precio = float.Parse(txtPrice.Text); 
 
-            objProductoCLN.actualizarProducto(Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value), txtDescripcion.Text, stock, precio);
+            objProductoCLN.actualizarProducto(Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value), txtDescripcion.Text, precio, stock);
 
             MessageBox.Show("Los datos fueron actualizados");
             LimpiarTextBoxs();
@@ -143,8 +147,8 @@ namespace WinFormsApp1
         private void LimpiarTextBoxs()
         {
             txtDescripcion.Clear();
-            txtPrecio.Clear();
-            txtStock.Clear();
+            txtStocki.Clear();
+            txtPrice.Clear();
         }
 
         //BOTON ELIMINAR
@@ -176,10 +180,15 @@ namespace WinFormsApp1
             if (opcion == DialogResult.Yes)
             {
 
+                
+                
+
                 try
                 {
-                    dgvStock.Rows[indice].Cells[2].Value = Convert.ToInt32(dgvStock.Rows[indice].Cells[2].Value) - 1;
-                    MessageBox.Show("Se vendió el producto correctamente", "Venta de producto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //vender carrito
+                    float venta = objProductoCLN.venderProductos(idProductos, idEmpleado);
+
+                    MessageBox.Show($"El total a pagar es {venta}", "Venta de producto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     LimpiarTextBoxs();
                 }
                 catch
@@ -190,6 +199,12 @@ namespace WinFormsApp1
             else
                 MessageBox.Show("Operación cancelada", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+            indiceCarrito = 0;
+            for( int i=0; i<idProductos.Length; i++)
+            {
+                idProductos[i] = 0;
+            }
+            lblLista.Text = "";
             cargarDgv();
         }
 
@@ -226,18 +241,39 @@ namespace WinFormsApp1
 
         private void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
-            lblLista.Text +=  nombreProducto + " \n";
+            
+
+            
+
 
 
             if (indiceCarrito < 5)
             {
                 idProductos[indiceCarrito] = Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value);
+                lblLista.Text += nombreProducto + " \n";
             }
             else
             {
                 MessageBox.Show("Alcanzó la cantidad máxima del carrito");
             }
             indiceCarrito++;
+
+            lblProductoCero.Text = idProductos[0].ToString();
+            lblProductoUno.Text = idProductos[1].ToString();
+            lblProductoDos.Text = idProductos[2].ToString();
+            lblProductoTres.Text = idProductos[3].ToString();
+            lblProductoCuatro.Text = idProductos[4].ToString();
+        }
+
+        private void btnVaciar_Click(object sender, EventArgs e)
+        {
+            indiceCarrito = 0;
+            for (int i = 0; i < idProductos.Length; i++)
+            {
+                idProductos[i] = 0;
+            }
+            lblLista.Text = "";
+            cargarDgv();
         }
     }
 }

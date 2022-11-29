@@ -26,13 +26,8 @@ namespace CapaAccesoDatos
         public DataTable consultarProductos()
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            //comando.CommandText = "consultarProductos";
-            //comando.CommandType = CommandType.StoredProcedure;
-
-            comando.CommandText = "select * FROM producto";
-            comando.CommandType= CommandType.Text;
-
-            //comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "consultarProductos";
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             leerTabla = comando.ExecuteReader();
             miTabla.Load(leerTabla);
@@ -52,7 +47,7 @@ namespace CapaAccesoDatos
             objConexionCAD.cerrarConexion();
             return resultado;
         }
-        public void agregarProducto(int idProducto, string descripcion, int stock, float precio)
+        public void agregarProducto(int idProducto, string descripcion, float precio, int stock)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "agregarProducto";
@@ -60,12 +55,12 @@ namespace CapaAccesoDatos
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idProducto", idProducto);
             comando.Parameters.AddWithValue("@descripcion", descripcion);
-            comando.Parameters.AddWithValue("@stock", stock);
             comando.Parameters.AddWithValue("@precio", precio);
+            comando.Parameters.AddWithValue("@stock", stock);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
-        public void actualizarProducto(int idProducto, string descripcion, int stock, float precio)
+        public void actualizarProducto(int idProducto, string descripcion, float precio, int stock)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "actualizarProducto";
@@ -73,8 +68,8 @@ namespace CapaAccesoDatos
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idProducto", idProducto);
             comando.Parameters.AddWithValue("@descripcion", descripcion);
-            comando.Parameters.AddWithValue("@stock", stock);
             comando.Parameters.AddWithValue("@precio", precio);
+            comando.Parameters.AddWithValue("@stock", stock);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
@@ -88,6 +83,25 @@ namespace CapaAccesoDatos
             comando.Parameters.AddWithValue("@idProducto", idProducto);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
+        }
+
+        public void venderProducto(int idProducto) 
+        {
+
+
+
+        }
+
+        public int getPrecio(int idProducto)
+        {
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = $"select precio from Producto where idProducto = {idProducto}";
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.Clear();
+            object objPrecio = comando.ExecuteScalar();
+            objConexionCAD.cerrarConexion();
+            int precio = Convert.ToInt32(objPrecio);
+            return precio;
         }
     }
 }
