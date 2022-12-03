@@ -53,20 +53,26 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    objEmpleadosCLN.agregarEmpleado(idEmpleado, txtName.Text, txtSurname.Text, txtEmail.Text, Convert.ToInt32(cbxSucursal.SelectedValue));
-                    LimpiarTextBoxs();
+                    if(txtEmail.Text == string.Empty || txtName.Text == string.Empty || txtSurname.Text == string.Empty)
+                    {
+                        MessageBox.Show("Por favor complete todos los campos", "Carga cancelada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        objEmpleadosCLN.agregarEmpleado(idEmpleado, txtName.Text, txtSurname.Text, txtEmail.Text, Convert.ToInt32(cbxSucursal.SelectedValue));
+                    }
+                   
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Hubo un error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    LimpiarTextBoxs();
+                    MessageBox.Show("Hubo un error: ", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 MessageBox.Show("Carga de empleado cancelada");
-                LimpiarTextBoxs();
             }
+            LimpiarTextBoxs();
             cargarDgv();
         }
         //BOTON MODIFICAR
@@ -85,13 +91,22 @@ namespace CapaPresentacion
         //BOTON ELIMINAR
         private void btnEliminate_Click(object sender, EventArgs e)
         {
-            DialogResult opcion = MessageBox.Show("¿Desea eliminar el producto?", "Eliminar producto", MessageBoxButtons.YesNo);
+            DialogResult opcion = MessageBox.Show("¿Desea eliminar el empleado?", "Eliminar empleado", MessageBoxButtons.YesNo);
 
             if (opcion == DialogResult.Yes)
             {
-                objEmpleadosCLN.eliminarEmpleado(Convert.ToInt32(dgvEmpleados.Rows[indice].Cells[0].Value));
-                MessageBox.Show("Se eliminó el producto correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                LimpiarTextBoxs();
+                int idEmpleado = Convert.ToInt32(dgvEmpleados.Rows[indice].Cells[0].Value);
+                bool banderaVerificacion = objEmpleadosCLN.empleadoTieneVentas(idEmpleado);
+                if (banderaVerificacion)
+                {
+                    MessageBox.Show("No se puede eliminar un empleado que ya posee ventas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    objEmpleadosCLN.eliminarEmpleado(idEmpleado);
+                    MessageBox.Show("Se eliminó el empleado correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    LimpiarTextBoxs();
+                }
                 btnEliminate.Visible = false;
                 btnPreEliminar.Visible = true;
                 btnPreEliminar.Enabled = true;
@@ -175,8 +190,6 @@ namespace CapaPresentacion
         private void llenarCbxSucursal()
         {
             DataTable miTabla = new DataTable();
-            miTabla.Clear();
-            cbxSucursal.DataSource = miTabla;
             miTabla = objSucursalCLN.consultarSucursales();
             cbxSucursal.DataSource = miTabla;
             cbxSucursal.ValueMember = "idSucursal";

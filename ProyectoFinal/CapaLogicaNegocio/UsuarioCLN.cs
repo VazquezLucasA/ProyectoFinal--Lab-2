@@ -20,14 +20,30 @@ namespace CapaLogicaNegocio
             miTabla = new DataTable();
             objUsuarioCAD = new UsuarioCAD();
         }
-        public bool validarUsuario(int idUsuario, string clave)
+        public bool validarLogin(string usuario, string clave)
         {
-            return objUsuarioCAD.consultarUnaClave(idUsuario, clave);
+            return objUsuarioCAD.validarLogin(usuario, clave);
         }
         public DataTable consultarUsuarios()
         {
             miTabla = objUsuarioCAD.consultarUsuarios();
             return miTabla;
+        }
+
+
+
+        //TESTEO
+        public bool test()
+        {
+            SqlDataReader versianda = objUsuarioCAD.usuarioClave();
+            if(versianda.HasRows)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

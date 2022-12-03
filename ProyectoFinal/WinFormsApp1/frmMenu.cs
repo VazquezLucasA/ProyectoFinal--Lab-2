@@ -98,6 +98,7 @@ namespace CapaPresentacion
         private void cbxSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
             llenarCbxEmpleado();
+            //llenarCbxSucursal();
         }
 
         //BTN CREDITOS

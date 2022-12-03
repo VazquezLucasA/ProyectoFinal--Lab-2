@@ -27,8 +27,9 @@ namespace CapaPresentacion
         {
             bool bandera = false;
             int idUsuario = Convert.ToInt32(cboUsuarios.SelectedValue);
+            string usuario = txtUsuario.Text;
             string clave = txtContraseña.Text;
-            bandera = objUsuarioCLN.validarUsuario(idUsuario, clave);
+            bandera = objUsuarioCLN.validarLogin(usuario, clave);
             if (bandera)
             {
                 MessageBox.Show("Contraseña correcta. Ingresando...");
@@ -78,5 +79,24 @@ namespace CapaPresentacion
                 txtContraseña.UseSystemPasswordChar = false;
             }
         }
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "USUARIO")
+            {
+                txtUsuario.Text = "";
+                txtUsuario.ForeColor = Color.Red;
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "USUARIO";
+                txtUsuario.ForeColor = Color.DimGray;
+            }
+        }
+
     }
 }

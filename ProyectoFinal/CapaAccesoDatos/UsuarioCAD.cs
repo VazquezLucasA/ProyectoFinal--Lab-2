@@ -38,6 +38,7 @@ namespace CapaAccesoDatos
             bool bandera = false;
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "recuperarClave";
+            //comando.CommandText = "verificarLogin";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idUsuario", idUsuario);
@@ -53,6 +54,37 @@ namespace CapaAccesoDatos
             }
             objConexionCAD.cerrarConexion();
             return bandera;
+        }
+        public bool validarLogin(string usuario, string contraseña)
+        {
+            bool bandera = false;
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = "validarLogin";
+            comando.CommandType = CommandType.StoredProcedure;
+            //comando.CommandText = $"select * from usuario where nombre = '{usuario}' and contraseña = '{contraseña}'";
+            //comando.CommandType = CommandType.Text;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@nombre", usuario);
+            comando.Parameters.AddWithValue("@contraseña", contraseña);
+            leerTabla = comando.ExecuteReader();
+            if (leerTabla.HasRows)
+            {
+                bandera = true;
+            }
+            else
+            {
+                bandera = false;
+            }
+            objConexionCAD.cerrarConexion();
+            return bandera;
+        }
+
+
+        //TEST SI ANDA
+        public SqlDataReader usuarioClave()
+        {
+
+            return leerTabla;
         }
     }
 }

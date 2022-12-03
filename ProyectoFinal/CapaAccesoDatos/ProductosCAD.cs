@@ -107,5 +107,25 @@ namespace CapaAccesoDatos
             int precio = Convert.ToInt32(objPrecio);
             return precio;
         }
+        public bool productoFueVendido(int idProducto)
+        {
+            bool valor;
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = $"select * from DetalleVenta where idProducto = {idProducto} ";
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idProducto", idProducto);
+            leerTabla = comando.ExecuteReader();
+            if (leerTabla.HasRows)
+            {
+                valor = true;
+            }
+            else
+            {
+                valor = false;
+            }
+            objConexionCAD.cerrarConexion();
+            return valor;
+        }
     }
 }

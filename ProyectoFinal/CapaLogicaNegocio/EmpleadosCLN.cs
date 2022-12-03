@@ -12,11 +12,13 @@ namespace CapaLogicaNegocio
     {
         private DataTable miTabla;
         private EmpleadosCAD objEmpleadosCAD;
+        private SucursalCAD objSucursalCAD;
 
         public EmpleadosCLN()
         {
             miTabla = new DataTable();
             objEmpleadosCAD = new EmpleadosCAD();
+            objSucursalCAD = new SucursalCAD();
         }
 
         public DataTable consultarEmpleados()
@@ -25,7 +27,6 @@ namespace CapaLogicaNegocio
             miTabla = objEmpleadosCAD.consultarEmpleados();
             return miTabla;
         }
-
         public void agregarEmpleado(int idEmpleado, string nombre, string apellido, string correo, int idSucursal)
         {
             objEmpleadosCAD.agregarEmpleado(idEmpleado, nombre, apellido, correo, idSucursal);
@@ -57,7 +58,11 @@ namespace CapaLogicaNegocio
             miTabla.Clear();
             miTabla = objEmpleadosCAD.consultarEmpleadosUnaSucursal(idSucursal);
             return miTabla;
-
+        }
+        public bool empleadoTieneVentas(int idEmpleado)
+        {
+            bool valor = objEmpleadosCAD.empleadoTieneVentas(idEmpleado);
+            return valor;
         }
     }
 

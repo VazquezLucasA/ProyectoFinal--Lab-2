@@ -100,5 +100,10 @@ namespace CapaLogicaNegocio
             
             return total;
         }
+        public bool productoFueVendido(int idProducto)
+        {
+            bool valor = objProductoCAD.productoFueVendido(idProducto);
+            return valor;
+        }
     }
 }

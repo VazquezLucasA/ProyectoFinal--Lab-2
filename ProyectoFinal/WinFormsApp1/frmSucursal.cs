@@ -36,10 +36,18 @@ namespace CapaPresentacion
 
             if (opcion == DialogResult.Yes)
             {
-
-                objSucursalCLN.eliminarSucursal(Convert.ToInt32(dgvSucursal.Rows[indice].Cells[0].Value));
-                MessageBox.Show("Se eliminó la sucursal correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                LimpiarTextBoxs();
+                int idSucursal = Convert.ToInt32(dgvSucursal.Rows[indice].Cells[0].Value);
+                bool sucursalConEmpleado = objSucursalCLN.sucursalTieneEmpleado(idSucursal);
+                if (sucursalConEmpleado)
+                {
+                    MessageBox.Show("No se puede eliminar sucursales que tengan empleados activos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    objSucursalCLN.eliminarSucursal(idSucursal);
+                    MessageBox.Show("Se eliminó la sucursal correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    LimpiarTextBoxs();
+                }
                 btnEliminar.Visible = false;
                 btnPreEliminar.Visible = true;
                 btnPreEliminar.Enabled = true;

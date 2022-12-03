@@ -106,12 +106,15 @@ namespace CapaAccesoDatos
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
+
+        //BORRAR ELIMINAR Y ACTUALIZAR VENTA
         public int getIdVenta()
         {
-            
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "select top 1 idVenta from Venta order by idVenta desc";
             comando.CommandType = CommandType.Text;
+            //comando.CommandText = "getIdVenta";
+            //comando.CommandType = CommandType.Text;
             comando.Parameters.Clear();
             object objIdVenta = comando.ExecuteScalar();
             objConexionCAD.cerrarConexion();
@@ -122,11 +125,5 @@ namespace CapaAccesoDatos
     }
 }
 
-
-//SqlConnection con = new SqlConnection("connection string");
-//SqlCommand cmd = new SqlConnection(SqlQuery, Con);
-//Con.Open();
-//TextBox1.Text = cmd.ExecuteScalar();
-//Con.Close();
 
 

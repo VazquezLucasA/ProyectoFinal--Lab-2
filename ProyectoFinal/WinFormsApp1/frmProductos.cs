@@ -174,8 +174,17 @@ namespace WinFormsApp1
 
             if (opcion == DialogResult.Yes)
             {
-                objProductoCLN.eliminarProducto(Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value));
-                MessageBox.Show("Se eliminó el producto correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int idProducto = Convert.ToInt32(dgvStock.Rows[indice].Cells[0].Value);
+                bool fueVendido = objProductoCLN.productoFueVendido(idProducto);
+                if (fueVendido)
+                {
+                    MessageBox.Show("No se puede eliminar un producto que ya fue vendido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    objProductoCLN.eliminarProducto(idProducto);
+                    MessageBox.Show("Se eliminó el producto correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 LimpiarTextBoxs();
                 btnEliminar.Visible = false;
                 btnPreEliminar.Visible = true;

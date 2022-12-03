@@ -35,7 +35,6 @@ namespace CapaAccesoDatos
             comando.Parameters.Clear();
             leerTabla = comando.ExecuteReader();
             miTabla.Load(leerTabla);
-
             objConexionCAD.cerrarConexion();
             return miTabla;
         }
@@ -89,6 +88,26 @@ namespace CapaAccesoDatos
 
             objConexionCAD.cerrarConexion();
             return miTabla;
+        }
+        public bool empleadoTieneVentas(int idEmpleado)
+        {
+            bool valor;
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = $"select * from Venta where idEmpleado = {idEmpleado} ";
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+            leerTabla = comando.ExecuteReader();
+            if (leerTabla.HasRows)
+            {
+                valor = true;
+            }
+            else
+            {
+                valor = false;
+            }
+            objConexionCAD.cerrarConexion();
+            return valor;
         }
     }
 }

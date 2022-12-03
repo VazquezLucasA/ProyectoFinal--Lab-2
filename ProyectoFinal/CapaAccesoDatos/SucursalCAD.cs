@@ -23,7 +23,8 @@ namespace CapaAccesoDatos
             comando = new SqlCommand();
         }
         public DataTable consultarSucursales()
-        {
+        {   
+            miTabla.Clear();
             comando.Connection = objConexionCAD.abrirConeccion();
             comando.CommandText = "consultarSucursales";
             comando.CommandType = CommandType.StoredProcedure;
@@ -67,6 +68,26 @@ namespace CapaAccesoDatos
             comando.Parameters.AddWithValue("@idSucursal", idSucursal);
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
+        }
+        public bool sucursalTieneEmpleado(int idSucursal)
+        {
+            bool valor;
+            comando.Connection = objConexionCAD.abrirConeccion();
+            comando.CommandText = $"select * from Empleado where idSucursal = {idSucursal} ";
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idSucursal", idSucursal);
+            leerTabla = comando.ExecuteReader();
+            if (leerTabla.HasRows)
+            {
+                valor = true;
+            }
+            else
+            {
+                valor = false;
+            }
+            objConexionCAD.cerrarConexion();
+            return valor;
         }
     }
 }
