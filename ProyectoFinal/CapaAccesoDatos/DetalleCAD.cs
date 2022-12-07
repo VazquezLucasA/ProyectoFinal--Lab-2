@@ -28,9 +28,9 @@ namespace CapaAccesoDatos
         public DataTable consultarDetalles(int idVenta)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            //comando.CommandText = "consultarDetalles";
-            //comando.CommandType = CommandType.StoredProcedure;}
-            comando.CommandText = $"Select descripcion, cantidad, precio from DetalleVenta inner join Producto on DetalleVenta.idProducto = Producto.idProducto where idVenta = {idVenta}";
+            comando.CommandText = "consultarDetalles";
+            comando.CommandType = CommandType.StoredProcedure;
+            //comando.CommandText = $"Select descripcion, cantidad, precio from DetalleVenta inner join Producto on DetalleVenta.idProducto = Producto.idProducto where idVenta = {idVenta}";
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idVenta", idVenta);
             leerTabla = comando.ExecuteReader();
@@ -55,10 +55,10 @@ namespace CapaAccesoDatos
         public int getIdDetalle()
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = "select top 1 idDetalle from DetalleVenta order by idDetalle desc";
-            comando.CommandType = CommandType.Text; 
-            //comando.CommandText = "getIdDetalle";
-            //comando.CommandType = CommandType.StoredProcedure;
+            //comando.CommandText = "select top 1 idDetalle from DetalleVenta order by idDetalle desc";
+            //comando.CommandType = CommandType.Text; 
+            comando.CommandText = "getIdDetalle";
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             object objIdDetalle = comando.ExecuteScalar();
             objConexionCAD.cerrarConexion();

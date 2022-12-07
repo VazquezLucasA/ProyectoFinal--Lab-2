@@ -106,7 +106,7 @@ namespace WinFormsApp1
             {
                 //indice = dgvStock.Rows.Add();
                 if (txtDescripcion.Text == string.Empty || txtPrice.Text == string.Empty || txtStocki.Text == string.Empty)
-                {
+                { 
                     MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else

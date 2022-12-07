@@ -93,8 +93,10 @@ namespace CapaAccesoDatos
         {
             bool valor;
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = $"select * from Venta where idEmpleado = {idEmpleado} ";
-            comando.CommandType = CommandType.Text;
+            //comando.CommandText = $"select * from Venta where idEmpleado = {idEmpleado} ";
+            //comando.CommandType = CommandType.Text;
+            comando.CommandText = "empleadoTieneVentas";
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idEmpleado", idEmpleado);
             leerTabla = comando.ExecuteReader();

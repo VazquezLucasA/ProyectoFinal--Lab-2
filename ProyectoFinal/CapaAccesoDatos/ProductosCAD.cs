@@ -99,8 +99,11 @@ namespace CapaAccesoDatos
         public int getPrecio(int idProducto)
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = $"select precio from Producto where idProducto = {idProducto}";
-            comando.CommandType = CommandType.Text;
+            //comando.CommandText = $"select precio from Producto where idProducto = {idProducto}";
+            //comando.CommandType = CommandType.Text;
+            comando.CommandText = "getPrecio";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idProducto", idProducto);
             comando.Parameters.Clear();
             object objPrecio = comando.ExecuteScalar();
             objConexionCAD.cerrarConexion();
@@ -111,8 +114,10 @@ namespace CapaAccesoDatos
         {
             bool valor;
             comando.Connection = objConexionCAD.abrirConeccion();
-            comando.CommandText = $"select * from DetalleVenta where idProducto = {idProducto} ";
-            comando.CommandType = CommandType.Text;
+            //comando.CommandText = $"select * from DetalleVenta where idProducto = {idProducto} ";
+            //comando.CommandType = CommandType.Text;
+            comando.CommandText = "productoFueVendido";
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idProducto", idProducto);
             leerTabla = comando.ExecuteReader();
