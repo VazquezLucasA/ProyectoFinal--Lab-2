@@ -26,10 +26,10 @@ namespace CapaLogicaNegocio
             return miTabla;
         }
 
-        public void agregarSucursal(int idSucursal, string nombre, string direccion)
+        public void agregarSucursal(int idSucursal, string sucursal, string direccion)
         {
             idSucursal++;
-            objSucursalCAD.agregarSucursal(idSucursal, nombre, direccion);
+            objSucursalCAD.agregarSucursal(idSucursal, sucursal, direccion);
         }
 
         public void eliminarSucursal(int idSucursal)

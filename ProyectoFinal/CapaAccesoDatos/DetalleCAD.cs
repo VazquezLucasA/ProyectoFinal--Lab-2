@@ -55,10 +55,10 @@ namespace CapaAccesoDatos
         public int getIdDetalle()
         {
             comando.Connection = objConexionCAD.abrirConeccion();
-            //comando.CommandText = "select top 1 idDetalle from DetalleVenta order by idDetalle desc";
-            //comando.CommandType = CommandType.Text; 
-            comando.CommandText = "getIdDetalle";
-            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "select top 1 idDetalle from DetalleVenta order by idDetalle desc";
+            comando.CommandType = CommandType.Text;
+            //comando.CommandText = "getIdDetalle";
+            //comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             object objIdDetalle = comando.ExecuteScalar();
             objConexionCAD.cerrarConexion();

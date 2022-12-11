@@ -106,7 +106,7 @@ namespace CapaAccesoDatos
             comando.ExecuteNonQuery();
             objConexionCAD.cerrarConexion();
         }
-
+        
         //BORRAR ELIMINAR Y ACTUALIZAR VENTA
         public int getIdVenta()
         {

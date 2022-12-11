@@ -84,7 +84,7 @@ namespace CapaPresentacion
             miTabla = objEmpleadosCLN.consultarEmpleadosUnaSucursal(valor);
             cbxEmpleados.DataSource = miTabla;
             cbxEmpleados.ValueMember = "idEmpleado";
-            cbxEmpleados.DisplayMember = "apellido";
+            cbxEmpleados.DisplayMember = "nombre";
         }
 
         //BOTON INGRESAR VENTAS
